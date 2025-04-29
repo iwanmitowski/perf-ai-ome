@@ -1,0 +1,5199 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ivan/ontologies/2025/2/fragrAIntica"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ivan/ontologies/2025/2/fragrAIntica">
+    <Prefix name="" IRI="http://www.semanticweb.org/ivan/ontologies/2025/2/fragrAIntica/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="fragrAIntica" IRI="http://www.semanticweb.org/ivan/ontologies/2025/2/fragrAIntica#"/>
+    <Declaration>
+        <Class IRI="#BaseNote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Female"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Floral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FloralNote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fragrance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FragranceNote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fresh"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FreshNote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gender"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gourmand"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GourmandNote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Longevity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LongevityLong"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LongevityModerate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LongevityShort"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Male"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MiddleNote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NoteFamily"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oriental"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrientalNote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Performance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sillage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SillageBeastMode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SillageModerate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SillageStrong"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TopNote"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Unisex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Woody"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WoodyNote"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsToFamily"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBaseNote"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasGender"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLongevity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSillage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTopNote"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#brandName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#fragranceName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Aldehydes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Almond"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Amber"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ambergris"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Amberwood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ambrette"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ambrette_Seed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ambrox"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ambroxan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Apple"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Aquatic_Notes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bamboo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bay_Leaf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Benzoin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bergamot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Black_Currant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Black_Pepper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Black_Truffle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Blood_Mandarin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CK_One"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cacao"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Calabrian_Bergamot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Caramel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cardamom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Carnation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cedar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cedarwood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chestnut"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chinese_Pepper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cinnamon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Clary_Sage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Clove"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Coffee"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Coriander"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cumin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cyclamen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Damask_Rose"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dior_Homme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dry_Woods"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fig_Leaves"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fir_Resin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Freesia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Fruity_Accords"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gardenia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Geranium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ginger"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Grapefruit"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Green_Mandarin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Green_Notes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Green_Tea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Honey"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Honeysuckle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Incense"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Iris"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jasmine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Juniper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kulfi_Accord"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lavender"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Leather"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lemon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lily"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lily-of-the-Valley"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lotus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lychee"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mandarin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Melon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mint"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Musk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Myrrh"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Neroli"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Opoponax"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Orange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Orange_Flower"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Orchid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Oregano"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Orris"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Oud"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Papyrus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Patchouli"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pelargonium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Peony"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pepper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pineapple"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pink_Pepper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Prada_Candy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rangoon_Creeper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Red_Algae"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Red_Berries"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Red_Rose"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rose"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rosemary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rosewood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Saffron"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sea_Notes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sea_Salt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Seaweed"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sichuan_Pepper"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sicilian_Bergamot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sicilian_Lemon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Smoke"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Spices"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Star_Anise"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sugar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tobacco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tobacco_Leaf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tuberose"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tulip"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tunisian_Neroli"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vanilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Verbena"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vetiver"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Violet"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Violet_Accord"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Water_Lily"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#White_Rose"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Woody_Accords"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Woody_Notes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ylang-Ylang"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Floral"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasBaseNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#FloralNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMiddleNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#FloralNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#FloralNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FloralNote"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#belongsToFamily"/>
+            <NamedIndividual IRI="#FloralNoteFamily"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Fragrance"/>
+        <ObjectUnionOf>
+            <Class IRI="#Floral"/>
+            <Class IRI="#Fresh"/>
+            <Class IRI="#Gourmand"/>
+            <Class IRI="#Oriental"/>
+            <Class IRI="#Woody"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FragranceNote"/>
+        <ObjectUnionOf>
+            <Class IRI="#BaseNote"/>
+            <Class IRI="#MiddleNote"/>
+            <Class IRI="#TopNote"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Fresh"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasBaseNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#FreshNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMiddleNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#FreshNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#FreshNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FreshNote"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#belongsToFamily"/>
+            <NamedIndividual IRI="#FreshNoteFamily"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Gender"/>
+        <ObjectUnionOf>
+            <Class IRI="#Female"/>
+            <Class IRI="#Male"/>
+            <Class IRI="#Unisex"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Gourmand"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasBaseNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#GourmandNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMiddleNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#GourmandNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#GourmandNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#GourmandNote"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#belongsToFamily"/>
+            <NamedIndividual IRI="#GourmandNoteFamily"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LongevityLong"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasLongevity"/>
+            <NamedIndividual IRI="#LongLongevity"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LongevityModerate"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasLongevity"/>
+            <NamedIndividual IRI="#ModerateLongevity"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LongevityShort"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasLongevity"/>
+            <NamedIndividual IRI="#ShortLongevity"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Oriental"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasBaseNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#OrientalNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMiddleNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#OrientalNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#OrientalNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OrientalNote"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#belongsToFamily"/>
+            <NamedIndividual IRI="#OrientalNoteFamily"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SillageBeastMode"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasSillage"/>
+            <NamedIndividual IRI="#BeastModeSillage"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SillageModerate"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasSillage"/>
+            <NamedIndividual IRI="#ModerateSillage"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SillageStrong"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasSillage"/>
+            <NamedIndividual IRI="#StrongSillage"/>
+        </ObjectHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Woody"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasBaseNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#WoodyNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasMiddleNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#WoodyNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasTopNote"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#belongsToFamily"/>
+                    <Class IRI="#WoodyNote"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#BaseNote"/>
+        <Class IRI="#FragranceNote"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Female"/>
+        <Class IRI="#Gender"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Floral"/>
+        <Class IRI="#Fragrance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FloralNote"/>
+        <Class IRI="#NoteFamily"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fresh"/>
+        <Class IRI="#Fragrance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FreshNote"/>
+        <Class IRI="#NoteFamily"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Gourmand"/>
+        <Class IRI="#Fragrance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GourmandNote"/>
+        <Class IRI="#NoteFamily"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Longevity"/>
+        <Class IRI="#Performance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LongevityLong"/>
+        <Class IRI="#Longevity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LongevityModerate"/>
+        <Class IRI="#Longevity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LongevityShort"/>
+        <Class IRI="#Longevity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Male"/>
+        <Class IRI="#Gender"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MiddleNote"/>
+        <Class IRI="#FragranceNote"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oriental"/>
+        <Class IRI="#Fragrance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrientalNote"/>
+        <Class IRI="#NoteFamily"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sillage"/>
+        <Class IRI="#Performance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SillageBeastMode"/>
+        <Class IRI="#Sillage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SillageModerate"/>
+        <Class IRI="#Sillage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SillageStrong"/>
+        <Class IRI="#Sillage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TopNote"/>
+        <Class IRI="#FragranceNote"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Unisex"/>
+        <Class IRI="#Gender"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Woody"/>
+        <Class IRI="#Fragrance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WoodyNote"/>
+        <Class IRI="#NoteFamily"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#FloralNote"/>
+        <Class IRI="#FreshNote"/>
+        <Class IRI="#GourmandNote"/>
+        <Class IRI="#OrientalNote"/>
+        <Class IRI="#WoodyNote"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LongevityLong"/>
+        <Class IRI="#LongevityModerate"/>
+        <Class IRI="#LongevityShort"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#NoteFamily"/>
+        <Class IRI="#Performance"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SillageBeastMode"/>
+        <Class IRI="#SillageModerate"/>
+        <Class IRI="#SillageStrong"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Aldehydes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Almond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Ambergris"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Amberwood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Ambrette"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Ambrette_Seed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Ambrox"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Ambroxan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Apple"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Aquatic_Notes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Bamboo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Bay_Leaf"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SillageBeastMode"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Benzoin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Black_Currant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Black_Pepper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Black_Truffle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Blood_Mandarin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#CK_One"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Cacao"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Calabrian_Bergamot"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Caramel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Cardamom"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Carnation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Cedarwood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Chestnut"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Chinese_Pepper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Chocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Cinnamon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Clary_Sage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Coffee"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Coriander"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Cumin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Cyclamen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Damask_Rose"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Fig_Leaves"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Fir_Resin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FloralNote"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Freesia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FreshNote"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Fruity_Accords"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Gardenia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Geranium"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Ginger"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GourmandNote"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Grapefruit"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Green_Mandarin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Green_Notes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Green_Tea"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Honey"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Honeysuckle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Incense"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Iris"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Juniper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Kulfi_Accord"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Leather"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Lily"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Lily-of-the-Valley"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LongevityLong"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Lotus"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Lychee"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Mandarin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Melon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LongevityModerate"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SillageModerate"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Myrrh"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Neroli"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Opoponax"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Orange"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Orange_Flower"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Orchid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Oregano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OrientalNote"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Orris"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Oud"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Papyrus"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Pear"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Pelargonium"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Peony"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Pepper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Pine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Pineapple"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Pink_Pepper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Rangoon_Creeper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Red_Algae"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Red_Berries"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Rosemary"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Rosewood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Saffron"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Sage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Sea_Notes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Sea_Salt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Seaweed"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LongevityShort"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Sichuan_Pepper"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Sicilian_Lemon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Smoke"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Spices"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Star_Anise"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SillageStrong"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Sugar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Tobacco_Leaf"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Tuberose"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Tulip"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Tunisian_Neroli"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Verbena"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Violet"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Violet_Accord"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Water_Lily"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#White_Rose"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WoodyNote"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Woody_Accords"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FragranceNote"/>
+        <NamedIndividual IRI="#Ylang-Ylang"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Female"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Unisex"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Male"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Coriander"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Sea_Notes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Calabrian_Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Honey"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Sugar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Peony"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Water_Lily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Aquatic_Notes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Aldehydes"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Almond"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Amber"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Ambergris"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Amberwood"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Ambrette"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Ambrette_Seed"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Ambrox"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Ambroxan"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Apple"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Aquatic_Notes"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Leather"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Cinnamon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Cardamom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Green_Mandarin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <NamedIndividual IRI="#Star_Anise"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#Fir_Resin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#Ambergris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#Amberwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <NamedIndividual IRI="#Saffron"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Bamboo"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Bay_Leaf"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Benzoin"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Bergamot"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Black_Currant"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Black_Pepper"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Blood_Mandarin"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Woody_Notes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Lily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Cyclamen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Freesia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <NamedIndividual IRI="#Tulip"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Incense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Juniper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Pine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Black_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Green_Tea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Mandarin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <NamedIndividual IRI="#Pineapple"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Cacao"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Calabrian_Bergamot"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Caramel"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Cardamom"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Carnation"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Cedar"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Cedarwood"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Gardenia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Spices"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Grapefruit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <NamedIndividual IRI="#Orange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Lily-of-the-Valley"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Aldehydes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Neroli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <NamedIndividual IRI="#Ylang-Ylang"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Chestnut"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Chinese_Pepper"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Chocolate"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Cinnamon"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Clary_Sage"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Clove"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Coffee"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Coriander"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Cumin"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Cyclamen"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Damask_Rose"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Leather"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Ambrette"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Iris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <NamedIndividual IRI="#Verbena"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Ambroxan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Orange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <NamedIndividual IRI="#Sicilian_Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <NamedIndividual IRI="#Ambroxan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <NamedIndividual IRI="#Geranium"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <NamedIndividual IRI="#Calabrian_Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <NamedIndividual IRI="#Sichuan_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#Honey"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#Geranium"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <NamedIndividual IRI="#Lychee"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#Bamboo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#White_Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#Apple"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <NamedIndividual IRI="#Sicilian_Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Dry_Woods"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Carnation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Lily-of-the-Valley"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Freesia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Green_Notes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <NamedIndividual IRI="#Water_Lily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Fig_Leaves"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Fir_Resin"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Freesia"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Fruity_Accords"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Gardenia"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Geranium"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Ginger"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Grapefruit"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Green_Mandarin"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Green_Notes"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Green_Tea"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <NamedIndividual IRI="#Orris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <NamedIndividual IRI="#Woody_Accords"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <NamedIndividual IRI="#Tuberose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <NamedIndividual IRI="#Rangoon_Creeper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#Geranium"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <NamedIndividual IRI="#Pink_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#Tobacco"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#Cinnamon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#Violet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <NamedIndividual IRI="#Mandarin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Incense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Opoponax"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <NamedIndividual IRI="#Neroli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Honey"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Honeysuckle"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Incense"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Iris"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Jasmine"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Cinnamon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Cumin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#Damask_Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#Red_Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <NamedIndividual IRI="#Red_Berries"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Juniper"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Kulfi_Accord"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Lavender"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Leather"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Cedarwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Papyrus"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Cardamom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Iris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <NamedIndividual IRI="#Violet_Accord"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Leather"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Lemon"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Lily"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Lily-of-the-Valley"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Lotus"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Lychee"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#Tobacco_Leaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#Clary_Sage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#Neroli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <NamedIndividual IRI="#Pink_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Mandarin"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Melon"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Mint"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Honey"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Mandarin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <NamedIndividual IRI="#Melon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Musk"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Myrrh"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#Iris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Neroli"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Ambroxan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Orange_Flower"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Rosemary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Sicilian_Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <NamedIndividual IRI="#Tunisian_Neroli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Opoponax"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Orange"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Orange_Flower"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Orchid"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Orris"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Oud"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Leather"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Woody_Notes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Cinnamon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Spices"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Blood_Mandarin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Grapefruit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Papyrus"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Patchouli"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Pear"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Pelargonium"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Peony"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Pepper"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Pine"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Pineapple"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Pink_Pepper"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#Woody_Notes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#Iris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#Benzoin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#Caramel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <NamedIndividual IRI="#Fruity_Accords"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Rangoon_Creeper"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Red_Algae"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Red_Berries"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Red_Rose"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#Smoke"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#Chestnut"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#Clove"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#Orange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <NamedIndividual IRI="#Pink_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Rose"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Rosemary"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Rosewood"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Saffron"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Sage"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Sea_Notes"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Sea_Salt"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Seaweed"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Incense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Myrrh"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#StrongSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Bay_Leaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Coriander"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <NamedIndividual IRI="#Oregano"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Sichuan_Pepper"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Sicilian_Bergamot"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Sicilian_Lemon"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Smoke"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Spices"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Star_Anise"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Sugar"/>
+        <NamedIndividual IRI="#GourmandNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Tobacco"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Tobacco_Leaf"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Incense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Lotus"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Orchid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Spices"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#BeastModeSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Black_Currant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <NamedIndividual IRI="#Black_Truffle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#ShortLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Kulfi_Accord"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Mandarin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Neroli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <NamedIndividual IRI="#Saffron"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Orris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Cardamom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <NamedIndividual IRI="#Pink_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Oud"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Cardamom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Chinese_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <NamedIndividual IRI="#Rosewood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#Dry_Woods"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#Cacao"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#Ginger"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <NamedIndividual IRI="#Tobacco_Leaf"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#LongLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#Lotus"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#Fruity_Accords"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <NamedIndividual IRI="#Lemon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Tuberose"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Tulip"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Tunisian_Neroli"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Vanilla"/>
+        <NamedIndividual IRI="#OrientalNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Verbena"/>
+        <NamedIndividual IRI="#FreshNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Incense"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Ambrox"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Black_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Violet"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Calabrian_Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Fig_Leaves"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <NamedIndividual IRI="#Grapefruit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Vetiver"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Violet"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Violet_Accord"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Water_Lily"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#White_Rose"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#Cedarwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#Seaweed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#Red_Algae"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#Sage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#Ambrette_Seed"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#Grapefruit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <NamedIndividual IRI="#Sea_Salt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Woody_Accords"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Woody_Notes"/>
+        <NamedIndividual IRI="#WoodyNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Almond"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Coffee"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Pear"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <NamedIndividual IRI="#Pink_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <NamedIndividual IRI="#Ylang-Ylang"/>
+        <NamedIndividual IRI="#FloralNoteFamily"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Lily-of-the-Valley"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Rose"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Mandarin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <NamedIndividual IRI="#Pear"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Musk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Honeysuckle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Jasmine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Orange_Blossom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Caramel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <NamedIndividual IRI="#Neroli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Vanilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Coffee"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Coriander"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <NamedIndividual IRI="#Mint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Sandalwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Amber"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Geranium"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Iris"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Black_Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Cardamom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <NamedIndividual IRI="#Neroli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#Patchouli"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#Nutmeg"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#Pelargonium"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#Grapefruit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#Orange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <NamedIndividual IRI="#Pepper"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Cedarwood"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Tonka_Bean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Vetiver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#ModerateLongevity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Cedar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Lavender"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Sage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSillage"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#ModerateSillage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Bergamot"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Cardamom"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <NamedIndividual IRI="#Pepper"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <Literal>Giorgio Armani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Acqua_di_Gio"/>
+        <Literal>Acqua di Gio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <Literal>Armani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Acqua_di_Gioia"/>
+        <Literal>Acqua di Gioia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <Literal>Giorgio Armani</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Armani_Code_Profumo"/>
+        <Literal>Armani Code Profumo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <Literal>Maison Francis Kurkdjian</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Baccarat_Rouge_540"/>
+        <Literal>Baccarat Rouge 540</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <Literal>Byredo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Byredo_Flowerhead"/>
+        <Literal>Byredo Flowerhead</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <Literal>Byredo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Byredo_Gypsy_Water"/>
+        <Literal>Byredo Gypsy Water</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <Literal>Calvin Klein</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#CK_One"/>
+        <Literal>CK One</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <Literal>Chanel</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Chanel_Coco_Noir"/>
+        <Literal>Chanel Coco Noir</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <Literal>Chanel</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Chanel_No._5"/>
+        <Literal>Chanel No. 5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <Literal>Dior</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Dior_Homme"/>
+        <Literal>Dior Homme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <Literal>Dior</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Dior_Homme_Sport"/>
+        <Literal>Dior Homme Sport</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <Literal>Dior</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Dior_Sauvage"/>
+        <Literal>Dior Sauvage</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <Literal>Diptyque</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Diptyque_Eau_Rose"/>
+        <Literal>Diptyque Eau Rose</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <Literal>Dolce and Gabbana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Dolce_and_Gabbana_Light_Blue"/>
+        <Literal>Dolce and Gabbana Light Blue</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <Literal>Calvin Klein</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Eternity_for_Women"/>
+        <Literal>Eternity for Female</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <Literal>Gucci</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Gucci_Bloom"/>
+        <Literal>Gucci Bloom</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <Literal>Gucci</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Gucci_Guilty_Pour_Homme"/>
+        <Literal>Gucci Guilty Pour Homme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <Literal>Gucci</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Gucci_Pour_Homme_II"/>
+        <Literal>Gucci Pour Homme II</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <Literal>Guerlain</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Guerlain_Shalimar"/>
+        <Literal>Guerlain Shalimar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <Literal>Jean Paul Gaultier</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Jean_Paul_Gaultier_Le_Male"/>
+        <Literal>Jean Paul Gaultier Le Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <Literal>Jo Malone</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Jo_Malone_Red_Roses"/>
+        <Literal>Jo Malone Red Roses</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <Literal>Le Labo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Le_Labo_Santal_33"/>
+        <Literal>Le Labo Santal 33</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <Literal>Maison Margiela</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Maison_Margiela_Replica_Jazz_Club"/>
+        <Literal>Maison Margiela Replica Jazz Club</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <Literal>Mugler</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Mugler_Angel"/>
+        <Literal>Mugler Angel</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <Literal>Narciso Rodriguez</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Narciso_Rodriguez_for_Her"/>
+        <Literal>Narciso Rodriguez for Her</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <Literal>Tom Ford</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Neroli_Portofino"/>
+        <Literal>Neroli Portofino</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <Literal>Paco Rabanne</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Paco_Rabanne_1_Million"/>
+        <Literal>Paco Rabanne 1 Million</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <Literal>Prada</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Prada_Candy"/>
+        <Literal>Prada Candy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <Literal>Maison Margiela</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Replica_By_the_Fireplace"/>
+        <Literal>Replica By the Fireplace</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <Literal>Serge Lutens</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Serge_Lutens_Ambre_Sultan"/>
+        <Literal>Serge Lutens Ambre Sultan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <Literal>Tom Ford</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Tom_Ford_Black_Orchid"/>
+        <Literal>Tom Ford Black Orchid</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <Literal>Tom Ford</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Extreme"/>
+        <Literal>Tom Ford Noir Extreme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <Literal>Tom Ford</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Tom_Ford_Noir_Femme"/>
+        <Literal>Tom Ford Noir Femme</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <Literal>Tom Ford</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Tom_Ford_Oud_Wood"/>
+        <Literal>Tom Ford Oud Wood</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <Literal>Tom Ford</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Tom_Ford_Tobacco_Vanille"/>
+        <Literal>Tom Ford Tobacco Vanille</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <Literal>Trussardi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Trussardi_Donna"/>
+        <Literal>Donna</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <Literal>Versace</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Versace_Dylan_Blue"/>
+        <Literal>Versace Dylan Blue</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <Literal>Jo Malone</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Wood_Sage_and_Sea_Salt"/>
+        <Literal>Wood Sage and Sea Salt</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <Literal>YSL</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#YSL_Black_Opium"/>
+        <Literal>YSL Black Opium</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <Literal>Dior</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Dior_J’adore"/>
+        <Literal>Dior J’adore</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <Literal>Kilian</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Kilian_Love_Don’t_Be_Shy"/>
+        <Literal>Kilian Love, Don’t Be Shy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <Literal>Mugler</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Mugler_A*Men"/>
+        <Literal>Mugler A*Men</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <Literal>Prada</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Prada_L’Homme_Prada"/>
+        <Literal>Prada L’Homme Prada</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <Literal>Hermès</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#Terre_d’Hermès"/>
+        <Literal>Terre_d’Hermès</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#brandName"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <Literal>YSL</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#fragranceName"/>
+        <NamedIndividual IRI="#YSL_La_Nuit_de_L’Homme"/>
+        <Literal>YSL La Nuit de L’Homme</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasGender"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSillage"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <Class IRI="#FragranceNote"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <Class IRI="#Fragrance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasGender"/>
+        <Class IRI="#Fragrance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <Class IRI="#Fragrance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <Class IRI="#Fragrance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSillage"/>
+        <Class IRI="#Fragrance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <Class IRI="#Fragrance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToFamily"/>
+        <Class IRI="#NoteFamily"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBaseNote"/>
+        <Class IRI="#BaseNote"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasGender"/>
+        <Class IRI="#Gender"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasLongevity"/>
+        <Class IRI="#Longevity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMiddleNote"/>
+        <Class IRI="#MiddleNote"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSillage"/>
+        <Class IRI="#Sillage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTopNote"/>
+        <Class IRI="#TopNote"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#brandName"/>
+        <Class IRI="#Fragrance"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#fragranceName"/>
+        <Class IRI="#Fragrance"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#brandName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#fragranceName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
