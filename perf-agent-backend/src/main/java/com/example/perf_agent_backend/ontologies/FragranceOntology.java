@@ -1,8 +1,13 @@
 package com.example.perf_agent_backend.ontologies;
 
 import com.example.perf_agent_backend.models.Fragrance;
+import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
+import org.semanticweb.owlapi.reasoner.InferenceType;
+import org.semanticweb.owlapi.reasoner.NodeSet;
+import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
@@ -19,6 +24,7 @@ public class FragranceOntology {
     private OWLOntology fragranceOntology;
     private OWLDataFactory dataFactory;
 
+    private OWLReasoner reasoner;
     private String ontologyIRIStr;
 
     public FragranceOntology() {
@@ -26,6 +32,10 @@ public class FragranceOntology {
         dataFactory = ontologyManager.getOWLDataFactory();
 
         loadOntology();
+
+        OWLReasonerFactory rf = new Reasoner.ReasonerFactory();
+        reasoner = rf.createReasoner(fragranceOntology);
+        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS);
 
         ontologyIRIStr = fragranceOntology.getOntologyID().getOntologyIRI().toString() + "#";
     }
@@ -38,7 +48,6 @@ public class FragranceOntology {
             }
 
             fragranceOntology = ontologyManager.loadOntologyFromOntologyDocument(in);
-            // … now you can query or manipulate the ontology …
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -47,22 +56,21 @@ public class FragranceOntology {
     public List<Fragrance> getFragrancesByNote(String note) {
         List<Fragrance> result = new ArrayList<>();
 
-        // normalize & grab the NOTE individual
         String frag = Arrays.stream(note.trim().split("\\s+"))
                 .map(w -> w.substring(0,1).toUpperCase() + w.substring(1).toLowerCase())
                 .collect(Collectors.joining("_"));
 
-        OWLNamedIndividual noteInd =
-                dataFactory.getOWLNamedIndividual(IRI.create(ontologyIRIStr + frag));
+        OWLNamedIndividual noteInd = dataFactory.getOWLNamedIndividual(
+                IRI.create(ontologyIRIStr + frag)
+        );
 
-        OWLObjectProperty topP    = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasTopNote"));
-        OWLObjectProperty midP    = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasMiddleNote"));
-        OWLObjectProperty baseP   = dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasBaseNote"));
-        Set<OWLObjectProperty> props = Set.of(topP, midP, baseP);
+        Set<OWLObjectProperty> props = Set.of(
+                dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasTopNote")),
+                dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasMiddleNote")),
+                dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasBaseNote"))
+        );
 
-        // scan all assertion axioms where the OBJECT == our noteInd
-        for (OWLObjectPropertyAssertionAxiom ax :
-                fragranceOntology.getAxioms(AxiomType.OBJECT_PROPERTY_ASSERTION)) {
+        for (OWLObjectPropertyAssertionAxiom ax : fragranceOntology.getAxioms(AxiomType.OBJECT_PROPERTY_ASSERTION)) {
             if (!props.contains(ax.getProperty())) continue;
             if (!ax.getObject().equals(noteInd)) continue;
 
@@ -70,7 +78,7 @@ public class FragranceOntology {
             if (!subj.isNamed()) continue;
 
             OWLNamedIndividual fragInd = subj.asOWLNamedIndividual();
-            result.add( mapIndividualToFragrance(fragInd) );
+            result.add(mapIndividualToFragrance(fragInd));
         }
 
         return result;
@@ -81,20 +89,15 @@ public class FragranceOntology {
 
         f.setId(ind.toStringID());
         f.setName(getDataPropertyValue(ind, "fragranceName"));
-
-        // 2) data-property: brand
         f.setBrand(getDataPropertyValue(ind, "brandName"));
 
-        // 3) object-properties: notes
-        f.setTopNotes(    getObjectPropertyValues(ind, "hasTopNote"));
-        f.setMiddleNotes( getObjectPropertyValues(ind, "hasMiddleNote"));
-        f.setBaseNotes(   getObjectPropertyValues(ind, "hasBaseNote"));
+        f.setTopNotes(getObjectPropertyValues(ind, "hasTopNote"));
+        f.setMiddleNotes(getObjectPropertyValues(ind, "hasMiddleNote"));
+        f.setBaseNotes(getObjectPropertyValues(ind, "hasBaseNote"));
 
-        // 4) sillage & longevity (single-valued)
-        f.setSillage(   firstOrNull(getObjectPropertyValues(ind, "hasSillage")));
-        f.setLongevity( firstOrNull(getObjectPropertyValues(ind, "hasLongevity")));
+        f.setSillage(firstOrNull(getObjectPropertyValues(ind, "hasSillage")));
+        f.setLongevity(firstOrNull(getObjectPropertyValues(ind, "hasLongevity")));
 
-        // 5) all the “type” classes (Floral, Woody, Fresh, etc.)
         f.setTypes(getAllTypes(ind));
 
         return f;
@@ -104,38 +107,29 @@ public class FragranceOntology {
         OWLDataProperty dp = dataFactory.getOWLDataProperty(
                 IRI.create(ontologyIRIStr + dpName)
         );
-        for (OWLDataPropertyAssertionAxiom ax : fragranceOntology.getDataPropertyAssertionAxioms(ind)) {
-            if (ax.getProperty().equals(dp)) {
-                return ax.getObject().getLiteral();
-            }
-        }
-        return null;
+        return fragranceOntology.getDataPropertyAssertionAxioms(ind).stream()
+                .filter(ax -> ax.getProperty().equals(dp))
+                .map(ax -> ax.getObject().getLiteral())
+                .findFirst()
+                .orElse(null);
     }
 
     private List<String> getObjectPropertyValues(OWLNamedIndividual ind, String opName) {
         OWLObjectProperty op = dataFactory.getOWLObjectProperty(
                 IRI.create(ontologyIRIStr + opName)
         );
-        List<String> values = new ArrayList<>();
-        for (OWLObjectPropertyAssertionAxiom ax : fragranceOntology.getObjectPropertyAssertionAxioms(ind)) {
-            if (ax.getProperty().equals(op) && ax.getObject().isNamed()) {
-                OWLNamedIndividual filler = ax.getObject().asOWLNamedIndividual();
-                String shortForm = getShortFormIndividual(filler);
-                values.add(shortForm.replace("_", " "));
-            }
-        }
-        return values;
+        return fragranceOntology.getObjectPropertyAssertionAxioms(ind).stream()
+                .filter(ax -> ax.getProperty().equals(op) && ax.getObject().isNamed())
+                .map(ax -> getShortFormIndividual(ax.getObject().asOWLNamedIndividual()).replace("_", " "))
+                .collect(Collectors.toList());
     }
 
     private List<String> getAllTypes(OWLNamedIndividual ind) {
-        List<String> types = new ArrayList<>();
-        for (OWLClassAssertionAxiom ax : fragranceOntology.getClassAssertionAxioms(ind)) {
-            OWLClassExpression ce = ax.getClassExpression();
-            if (!ce.isAnonymous()) {
-                types.add(getShortForm(ce.asOWLClass()));
-            }
-        }
-        return types;
+        NodeSet<OWLClass> typeNodes = reasoner.getTypes(ind, true);
+        return typeNodes.getFlattened().stream()
+                .filter(c -> !c.isOWLThing())
+                .map(this::getShortForm)
+                .collect(Collectors.toList());
     }
 
     private <T> T firstOrNull(List<T> list) {
@@ -143,12 +137,10 @@ public class FragranceOntology {
     }
 
     private String getShortForm(OWLClass cls) {
-        String label = cls.getIRI().toString();
-        return label.substring(label.indexOf("#") + 1);
+        return cls.getIRI().getFragment();
     }
 
     private String getShortFormIndividual(OWLNamedIndividual ind) {
-        String label = ind.getIRI().toString();
-        return label.substring(label.indexOf("#") + 1);
+        return ind.getIRI().getFragment();
     }
 }
