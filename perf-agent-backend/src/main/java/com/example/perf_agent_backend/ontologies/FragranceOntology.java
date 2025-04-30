@@ -1,5 +1,6 @@
 package com.example.perf_agent_backend.ontologies;
 
+import com.example.perf_agent_backend.dtos.MessageDTO;
 import com.example.perf_agent_backend.models.Fragrance;
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -11,95 +12,129 @@ import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Component
 public class FragranceOntology {
 
-    private OWLOntologyManager ontologyManager;
-    private OWLOntology fragranceOntology;
-    private OWLDataFactory dataFactory;
-
-    private OWLReasoner reasoner;
-    private String ontologyIRIStr;
+    private final OWLOntologyManager ontologyManager;
+    private OWLOntology            fragranceOntology;
+    private final OWLDataFactory   dataFactory;
+    private final OWLReasoner      reasoner;
+    private final String           ontologyIRIStr;
 
     public FragranceOntology() {
         ontologyManager = OWLManager.createOWLOntologyManager();
-        dataFactory = ontologyManager.getOWLDataFactory();
+        dataFactory     = ontologyManager.getOWLDataFactory();
 
-        loadOntology();
-
-        OWLReasonerFactory rf = new Reasoner.ReasonerFactory();
-        reasoner = rf.createReasoner(fragranceOntology);
-        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS);
-
-        ontologyIRIStr = fragranceOntology.getOntologyID().getOntologyIRI().toString() + "#";
-    }
-
-    private void loadOntology() {
+        // Load your ontology document
         try (InputStream in = getClass().getClassLoader()
                 .getResourceAsStream("ontologies/fragrAIntica.owx")) {
             if (in == null) {
                 throw new IllegalStateException("Could not find fragrAIntica.owl on classpath!");
             }
-
             fragranceOntology = ontologyManager.loadOntologyFromOntologyDocument(in);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+        // Bootstrap the reasoner
+        OWLReasonerFactory rf = new Reasoner.ReasonerFactory();
+        reasoner = rf.createReasoner(fragranceOntology);
+        reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY,
+                InferenceType.CLASS_ASSERTIONS);
+
+        ontologyIRIStr = fragranceOntology.getOntologyID()
+                .getOntologyIRI().toString() + "#";
     }
 
-    public List<Fragrance> getFragrancesByNote(String note) {
-        List<Fragrance> result = new ArrayList<>();
 
-        String frag = Arrays.stream(note.trim().split("\\s+"))
-                .map(w -> w.substring(0,1).toUpperCase() + w.substring(1).toLowerCase())
-                .collect(Collectors.joining("_"));
+    //    {
+    //        "types": [],
+    //        "notes": [],
+    //        "hasLongevity": [],
+    //        "hasSillage": [],
+    //        "brandName": null,
+    //        "fragranceName": null,
+    //        "count": null
+    //    }
+    public List<Fragrance> getFragrances(MessageDTO message) {
+        List<Fragrance> all = new ArrayList<>();
 
-        OWLNamedIndividual noteInd = dataFactory.getOWLNamedIndividual(
-                IRI.create(ontologyIRIStr + frag)
-        );
+        for (OWLNamedIndividual ind : fragranceOntology.getIndividualsInSignature()) {
+            Fragrance frag = mapIndividualToFragrance(ind);
 
-        Set<OWLObjectProperty> props = Set.of(
-                dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasTopNote")),
-                dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasMiddleNote")),
-                dataFactory.getOWLObjectProperty(IRI.create(ontologyIRIStr + "hasBaseNote"))
-        );
-
-        for (OWLObjectPropertyAssertionAxiom ax : fragranceOntology.getAxioms(AxiomType.OBJECT_PROPERTY_ASSERTION)) {
-            if (!props.contains(ax.getProperty())) continue;
-            if (!ax.getObject().equals(noteInd)) continue;
-
-            OWLIndividual subj = ax.getSubject();
-            if (!subj.isNamed()) continue;
-
-            OWLNamedIndividual fragInd = subj.asOWLNamedIndividual();
-            result.add(mapIndividualToFragrance(fragInd));
+            if (matchesFilters(frag, message)) {
+                all.add(frag);
+            }
         }
 
-        return result;
+        Integer limit = message.getCount();
+        if (limit != null && limit < all.size()) {
+            return new ArrayList<>(all.subList(0, limit));
+        }
+        return all;
     }
 
+    /** Returns true only if frag satisfies all non-empty filters in message (AND-across-categories). */
+    private boolean matchesFilters(Fragrance frag, MessageDTO msg) {
+        // brandName
+        if (msg.getBrandName() != null &&
+                !msg.getBrandName().equalsIgnoreCase(frag.getBrand())) {
+            return false;
+        }
+        // fragranceName
+        if (msg.getFragranceName() != null &&
+                !msg.getFragranceName().equalsIgnoreCase(frag.getName())) {
+            return false;
+        }
+        // types (must contain all requested types)
+        if (!msg.getTypes().isEmpty() &&
+                !frag.getTypes().containsAll(msg.getTypes())) {
+            return false;
+        }
+        // notes (OR within notes: at least one requested note must appear in any base/middle/top)
+        if (!msg.getNotes().isEmpty()) {
+            List<String> allNotes = new ArrayList<>();
+            allNotes.addAll(frag.getBaseNotes());
+            allNotes.addAll(frag.getMiddleNotes());
+            allNotes.addAll(frag.getTopNotes());
+            boolean anyNoteMatches = msg.getNotes().stream()
+                    .anyMatch(allNotes::contains);
+            if (!anyNoteMatches) {
+                return false;
+            }
+        }
+        // longevity (OR within: at least one requested longevity must match)
+        if (!msg.getHasLongevity().isEmpty()) {
+            String lon = frag.getLongevity();
+            if (lon == null || msg.getHasLongevity().stream().noneMatch(lon::equals)) {
+                return false;
+            }
+        }
+        // sillage (OR within)
+        if (!msg.getHasSillage().isEmpty()) {
+            String sil = frag.getSillage();
+            if (sil == null || msg.getHasSillage().stream().noneMatch(sil::equals)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /** Your existing mapping logic — unchanged. */
     public Fragrance mapIndividualToFragrance(OWLNamedIndividual ind) {
         Fragrance f = new Fragrance();
-
         f.setId(ind.toStringID());
         f.setName(getDataPropertyValue(ind, "fragranceName"));
         f.setBrand(getDataPropertyValue(ind, "brandName"));
-
         f.setTopNotes(getObjectPropertyValues(ind, "hasTopNote"));
         f.setMiddleNotes(getObjectPropertyValues(ind, "hasMiddleNote"));
         f.setBaseNotes(getObjectPropertyValues(ind, "hasBaseNote"));
-
         f.setSillage(firstOrNull(getObjectPropertyValues(ind, "hasSillage")));
         f.setLongevity(firstOrNull(getObjectPropertyValues(ind, "hasLongevity")));
-
         f.setTypes(getAllTypes(ind));
-
         return f;
     }
 
@@ -120,7 +155,8 @@ public class FragranceOntology {
         );
         return fragranceOntology.getObjectPropertyAssertionAxioms(ind).stream()
                 .filter(ax -> ax.getProperty().equals(op) && ax.getObject().isNamed())
-                .map(ax -> getShortFormIndividual(ax.getObject().asOWLNamedIndividual()).replace("_", " "))
+                .map(ax -> getShortFormIndividual(ax.getObject().asOWLNamedIndividual())
+                        .replace("_", " "))
                 .collect(Collectors.toList());
     }
 

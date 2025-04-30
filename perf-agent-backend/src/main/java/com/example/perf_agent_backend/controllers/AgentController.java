@@ -19,6 +19,6 @@ public class AgentController {
 
     @PostMapping("/recommend")
     public CompletableFuture<String> sendMessage(@RequestBody MessageDTO messageDTO) {
-        return agentService.getRecommendationsByNote(messageDTO.getMessage());
+        return agentService.getRecommendations(messageDTO);
     }
 }

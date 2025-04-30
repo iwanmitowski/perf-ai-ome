@@ -1,5 +1,6 @@
 package com.example.perf_agent_backend.agents;
 
+import com.example.perf_agent_backend.dtos.MessageDTO;
 import com.example.perf_agent_backend.ontologies.FragranceOntology;
 import com.example.perf_agent_backend.models.Fragrance;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -13,6 +14,7 @@ import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.domain.FIPAException;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
+import jade.lang.acl.UnreadableException;
 import jade.proto.AchieveREResponder;
 
 import java.util.List;
@@ -49,9 +51,13 @@ public class RecommendationAgent extends Agent {
                     block();
                     return;
                 }
-
-                String note = msg.getContent();
-                List<Fragrance> found = fragranceOntology.getFragrancesByNote(note);
+                MessageDTO message;
+                try {
+                    message = (MessageDTO) msg.getContentObject();
+                } catch (UnreadableException e) {
+                    throw new RuntimeException(e);
+                }
+                List<Fragrance> found = fragranceOntology.getFragrances(message);
 
                 ACLMessage reply = msg.createReply();
                 ObjectMapper mapper = new ObjectMapper();
@@ -68,7 +74,7 @@ public class RecommendationAgent extends Agent {
                     }
                 } else {
                     reply.setPerformative(ACLMessage.FAILURE);                // <-- explicit
-                    reply.setContent("No fragrances for note: " + note);
+                    reply.setContent("No fragrances");
                 }
 
                 myAgent.send(reply);

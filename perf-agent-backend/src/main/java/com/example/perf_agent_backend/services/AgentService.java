@@ -2,6 +2,7 @@ package com.example.perf_agent_backend.services;
 
 import com.example.perf_agent_backend.agents.AgentManager;
 import com.example.perf_agent_backend.agents.ListeningAgent;
+import com.example.perf_agent_backend.dtos.MessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -13,18 +14,14 @@ public class AgentService {
     @Autowired
     private AgentManager agentManager;
 
-    /**
-     * Front-door for your API: take the note, hand it off to the ListeningAgent,
-     * and return whatever JSON (or error string) it comes back with.
-     */
     @Async("agentExecutor")
-    public CompletableFuture<String> getRecommendationsByNote(String note) {
+    public CompletableFuture<String> getRecommendations(MessageDTO message) {
         ListeningAgent listener = agentManager.getListeningAgent();
         if (listener == null) {
             return CompletableFuture.completedFuture("ListeningAgent not available");
         }
         // askRecommendation does the CFP → RecommendationAgent → reply cycle
-        String result = listener.askRecommendation(note);
+        String result = listener.askRecommendation(message);
         return CompletableFuture.completedFuture(result);
     }
 }

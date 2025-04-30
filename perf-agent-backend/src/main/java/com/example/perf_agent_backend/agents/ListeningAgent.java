@@ -1,11 +1,14 @@
 package com.example.perf_agent_backend.agents;
 
+import com.example.perf_agent_backend.dtos.MessageDTO;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 
 public class ListeningAgent extends Agent {
     public static ListeningAgent instance;
@@ -15,13 +18,16 @@ public class ListeningAgent extends Agent {
     protected void setup() {
         instance = this;
         System.out.println(getLocalName() + " ready to proxy requests...");
-        // Nothing else here—each request is handled on demand.
     }
 
-    public String askRecommendation(String note) {
+    public String askRecommendation(MessageDTO message) {
         ACLMessage cfp = new ACLMessage(ACLMessage.CFP);
         cfp.addReceiver(new AID("RecommendationAgent", AID.ISLOCALNAME));
-        cfp.setContent(note);
+        try {
+            cfp.setContentObject(message);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         String conv = "inner-" + System.currentTimeMillis();
         String tag  = "reply-" + System.currentTimeMillis();
