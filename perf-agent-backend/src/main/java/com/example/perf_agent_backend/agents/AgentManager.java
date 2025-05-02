@@ -20,7 +20,6 @@ public class AgentManager {
             Profile profile = new ProfileImpl();
             ContainerController container = runtime.createMainContainer(profile);
 
-            // 1) start RecommendationAgent
             AgentController recCtrl = container.createNewAgent(
                     "RecommendationAgent",
                     RecommendationAgent.class.getName(),
@@ -28,7 +27,6 @@ public class AgentManager {
             );
             recCtrl.start();
 
-            // 2) start ListeningAgent
             AgentController listenCtrl = container.createNewAgent(
                     "ListeningAgent",
                     ListeningAgent.class.getName(),
@@ -36,7 +34,6 @@ public class AgentManager {
             );
             listenCtrl.start();
 
-            // give them a moment to wire up their static instances
             Thread.sleep(1000);
 
             this.recommendationAgent = RecommendationAgent.instance;

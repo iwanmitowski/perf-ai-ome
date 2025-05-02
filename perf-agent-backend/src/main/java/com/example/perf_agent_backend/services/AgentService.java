@@ -20,7 +20,7 @@ public class AgentService {
         if (listener == null) {
             return CompletableFuture.completedFuture("ListeningAgent not available");
         }
-        // askRecommendation does the CFP → RecommendationAgent → reply cycle
+
         String result = listener.askRecommendation(message);
         return CompletableFuture.completedFuture(result);
     }

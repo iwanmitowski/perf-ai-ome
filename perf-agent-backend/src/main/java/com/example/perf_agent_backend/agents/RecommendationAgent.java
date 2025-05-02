@@ -28,7 +28,6 @@ public class RecommendationAgent extends Agent {
         instance = this;
         fragranceOntology = new FragranceOntology();
 
-        // Register with the DF
         DFAgentDescription dfd = new DFAgentDescription();
         dfd.setName(getAID());
         ServiceDescription sd = new ServiceDescription();
@@ -41,7 +40,6 @@ public class RecommendationAgent extends Agent {
             throw new RuntimeException(e);
         }
 
-        // Listen for CFPs
         addBehaviour(new jade.core.behaviours.CyclicBehaviour(this) {
             @Override
             public void action() {
@@ -63,17 +61,16 @@ public class RecommendationAgent extends Agent {
                 ObjectMapper mapper = new ObjectMapper();
 
                 if (!found.isEmpty()) {
-                    reply.setPerformative(ACLMessage.INFORM);                // <-- explicit
+                    reply.setPerformative(ACLMessage.INFORM);
                     try {
                         reply.setContent(mapper.writeValueAsString(found));
                         reply.setLanguage("JSON");
                     } catch (JsonProcessingException e) {
-                        // if serialization fails, tell the sender
-                        reply.setPerformative(ACLMessage.FAILURE);            // <-- explicit
+                        reply.setPerformative(ACLMessage.FAILURE);
                         reply.setContent("Serialization error: " + e.getMessage());
                     }
                 } else {
-                    reply.setPerformative(ACLMessage.FAILURE);                // <-- explicit
+                    reply.setPerformative(ACLMessage.FAILURE);
                     reply.setContent("No fragrances");
                 }
 

@@ -28,7 +28,6 @@ public class FragranceOntology {
         ontologyManager = OWLManager.createOWLOntologyManager();
         dataFactory     = ontologyManager.getOWLDataFactory();
 
-        // Load your ontology document
         try (InputStream in = getClass().getClassLoader()
                 .getResourceAsStream("ontologies/fragrAIntica.owx")) {
             if (in == null) {
@@ -39,7 +38,6 @@ public class FragranceOntology {
             throw new RuntimeException(e);
         }
 
-        // Bootstrap the reasoner
         OWLReasonerFactory rf = new Reasoner.ReasonerFactory();
         reasoner = rf.createReasoner(fragranceOntology);
         reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY,
@@ -77,24 +75,22 @@ public class FragranceOntology {
         return all;
     }
 
-    /** Returns true only if frag satisfies all non-empty filters in message (AND-across-categories). */
     private boolean matchesFilters(Fragrance frag, MessageDTO msg) {
-        // brandName
         if (msg.getBrandName() != null &&
                 !msg.getBrandName().equalsIgnoreCase(frag.getBrand())) {
             return false;
         }
-        // fragranceName
+
         if (msg.getFragranceName() != null &&
                 !msg.getFragranceName().equalsIgnoreCase(frag.getName())) {
             return false;
         }
-        // types (must contain all requested types)
+
         if (!msg.getTypes().isEmpty() &&
                 !frag.getTypes().containsAll(msg.getTypes())) {
             return false;
         }
-        // notes (OR within notes: at least one requested note must appear in any base/middle/top)
+
         if (!msg.getNotes().isEmpty()) {
             List<String> allNotes = new ArrayList<>();
             allNotes.addAll(frag.getBaseNotes());
@@ -106,14 +102,14 @@ public class FragranceOntology {
                 return false;
             }
         }
-        // longevity (OR within: at least one requested longevity must match)
+
         if (!msg.getHasLongevity().isEmpty()) {
             String lon = frag.getLongevity();
             if (lon == null || msg.getHasLongevity().stream().noneMatch(lon::equals)) {
                 return false;
             }
         }
-        // sillage (OR within)
+
         if (!msg.getHasSillage().isEmpty()) {
             String sil = frag.getSillage();
             if (sil == null || msg.getHasSillage().stream().noneMatch(sil::equals)) {
@@ -123,7 +119,6 @@ public class FragranceOntology {
         return true;
     }
 
-    /** Your existing mapping logic — unchanged. */
     public Fragrance mapIndividualToFragrance(OWLNamedIndividual ind) {
         Fragrance f = new Fragrance();
         f.setId(ind.toStringID());

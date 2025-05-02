@@ -12,7 +12,6 @@ import java.io.IOException;
 
 public class ListeningAgent extends Agent {
     public static ListeningAgent instance;
-    private ObjectMapper mapper = new ObjectMapper();
 
     @Override
     protected void setup() {
@@ -36,7 +35,6 @@ public class ListeningAgent extends Agent {
 
         send(cfp);
 
-        // wait up to 5s
         MessageTemplate mt = MessageTemplate.and(
                 MessageTemplate.MatchConversationId(conv),
                 MessageTemplate.MatchInReplyTo(tag)
