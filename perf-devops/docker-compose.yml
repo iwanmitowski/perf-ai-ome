@@ -1,0 +1,16 @@
+services:
+  perf-agent-backend:
+    container_name: perf-agent-backend
+    build:
+      context: ../perf-agent-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    networks:
+      - default
+    
+networks:
+  default:
+    name: perf-ai-ome
