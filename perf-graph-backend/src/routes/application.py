@@ -27,24 +27,8 @@ async def lifespan(app_ctx: FastAPI):
 
 openapi_tags_metadata = [
     {
-        "name": "Agent",
-        "description": "Endpoints related to invoking AI agents and handling responses.",
-    },
-    {
-        "name": "Service",
-        "description": "Service-related endpoints, such as retrieving metadata or checking system health.",
-    },
-    {
         "name": "User",
-        "description": "Endpoints related to user management.",
-    },
-    {
-        "name": "Project",
-        "description": "Endpoints related to project management.",
-    },
-    {
-        "name": "File",
-        "description": "Endpoints related to file management used in prompting.",
+        "description": "Endpoints related to yser management .",
     },
 ]
 

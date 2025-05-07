@@ -2,7 +2,7 @@ import os
 import logging
 from pymongo import MongoClient
 from abc import ABC, abstractmethod
-from langchain_core.users import Document
+from langchain_core.documents import Document
 
 logger = logging.getLogger(__name__)
 

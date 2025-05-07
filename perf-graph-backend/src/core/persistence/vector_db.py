@@ -2,7 +2,7 @@ import json
 import os
 import logging
 from abc import ABC, abstractmethod
-from typing import Union, Dict, Any, Callable
+from typing import Union, Dict, Any, Callable, Optional
 
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.documents import Document
@@ -63,6 +63,9 @@ class BaseVectorDBClient(ABC):
     def get_all_documents(self):
         pass
 
+    @abstractmethod
+    def update_document(self, doc_id: str, document: Document):
+        pass
 
 class MilvusClientWrapper(BaseVectorDBClient):
     """Milvus client using LangChain integration."""
@@ -127,6 +130,33 @@ class MilvusClientWrapper(BaseVectorDBClient):
                     conditions.append(f'{key} == {value_str}')
             milvus_filter = ' && '.join(conditions)
         return self.vectorstore.similarity_search(query, k=k, expr=milvus_filter)
+
+    def get_document(self, doc_id: str) -> Optional[Document]:
+        """
+        Fetch a single document from Milvus by its primary key.
+        Returns None if not found.
+        """
+        results = self.vectorstore.col.query(
+            expr=f'{self.vectorstore._primary_field} == "{doc_id}"',
+            output_fields=[self.vectorstore._text_field],  # adjust if you have metadata fields
+            limit=1,
+        )
+        if not results:
+            return None
+        record = results[0]
+        text = record[self.vectorstore._text_field]
+
+        metadata = {
+            k: v
+            for k, v in record.items()
+            if k not in {self.vectorstore._primary_field, self.vectorstore._text_field}
+        }
+        
+        return Document(page_content=text, metadata=metadata)
+
+    def update_document(self, doc_id: str, document: Document):
+        self.delete_document(doc_id)
+        self.add_document(doc_id, document)
 
     def get_database(self) -> Milvus:
         """Return Milvus vectorstore."""
