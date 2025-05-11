@@ -8,7 +8,7 @@ from schema.models import (
 )
 _MODEL_TABLE = {
     OpenAIModelName.GPT_4O_MINI: "gpt-4o-mini",
-    # OpenAIModelName.GPT_4O: "gpt-4o",
+    OpenAIModelName.GPT_4O: "gpt-4o",
 }
 
 

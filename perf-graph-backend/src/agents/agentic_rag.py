@@ -27,8 +27,8 @@ logger = logging.getLogger(__name__)
 INIT_SYSTEM_INSTRUCTIONS = f"""
 Today's date is {datetime.now().strftime("%B %d, %Y")}.
 
-You are a knowledgeable and helpful assistant that provides expert-level fragrance recommendations tailored to individual preferences.
-You live in a system where users describe their scent interests, such as fragrance types, notes, performance characteristics (longevity, sillage), or specific brands and names.
+You are a knowledgeable and helpful assistant that provides expert-level fragrance recommendations tailored to individual preferences via tools.
+You live in a system where users describe their favourite fragrances, their collection, scent interests, their fragrance collection or fragrance types, notes, performance characteristics (longevity, sillage), or specific brands and names.
 
 You may receive a request from the user involving some or all of the following elements:
 - "types": Fragrance categories such as "woody", "floral", "oriental", "fresh", etc.
@@ -39,17 +39,21 @@ You may receive a request from the user involving some or all of the following e
 - "fragranceName": A known fragrance the user likes or is curious about.
 - "count": A limit on how many results to return.
 
+You may also receive a request that does not include any of the above elements, but is still related to fragrances. In this case, you should provide an answer related to the question via tools.
+
 Your job is to:
 1. Interpret the user's input, preferences, or questions clearly and convert them into a meaningful fragrance suggestion or insight.
 2. If necessary, make a selection of recommended fragrances based on the user's stated desires, tastes, or even context (e.g. season, occasion).
 3. Avoid referencing or mentioning system components such as APIs, databases, tools, frameworks, or any underlying mechanism.
 4. When applicable, you may highlight why a fragrance fits the criteria — e.g. its typical composition, performance, or brand signature.
 5. Present the output in a way that sounds natural, stylish, and human. Your tone is warm, elegant, and refined, like a fragrance concierge at a high-end boutique.
-6. Suggest fragrances suiting the user's preferences, but do not provide links or purchase options. Focus on the fragrance itself and its characteristics.
+6. Suggest fragrances suiting the user's preferences - notes, fragrances, types, but do not provide links or purchase options. Focus on the fragrance itself and its characteristics.
 
 Be prepared to reason through user input, even if it includes partial or loosely structured information. 
-If a user is unsure or open-ended, help guide them with clarifying questions, or suggest discovery sets (e.g. "If you enjoy amber and spice, you might love...").
+If a user is unsure or open-ended and doesn't want experiment, help guide them with clarifying questions, or suggest discovery sets, (e.g. "If you enjoy amber and spice, you might love...").
 
+
+Do NOT say you couldn’t find something in “the system.” 
 Do not include links, code, or any mention of internal processes in your final responses.
 You are here to inspire, inform, and recommend — not to explain how the system works, do not tell to user that you don't know.
 """
@@ -65,12 +69,16 @@ def retrieve_data(state: AgentState, config: RunnableConfig) -> AgentState:
     last_message_content = get_last_message_content(state)
 
     vector_db_client = get_vector_db_client()
-    vector_result = vector_db_client.search_documents(query=last_message_content, filters=filters)
+    vector_result = vector_db_client.get_document(doc_id=user_id)
+    #vector_result = vector_db_client.search_documents(query=last_message_content, filters=filters)
 
     init_message = "------ Starting obtaining user information from database ----- \n"
     if vector_result:
-        retrieved_docs = f"User information:\n{vector_result[0].page_content.strip()}\n"
+        print(f"User information found: {vector_result.page_content.strip()}")
+        #retrieved_docs = f"User information:\n{vector_result[0].page_content.strip()}\n"
+        retrieved_docs = vector_result.page_content.strip()
     else:
+        print("No user information found.")
         retrieved_docs = NO_DOCS_FOUND_MESSAGE
 
     end_message = "\n----- End obtaining user information from the vector database -----"
@@ -101,23 +109,6 @@ def get_agent_tools():
         answer_for_missing_information_tool
     ]
 
-def ask_model_for_missing_information(config: RunnableConfig) -> str:
-    """
-    Asks the model for missing information based on the selected documents.
-    """
-    user_id = get_agent_request_value(config, "user_id", "")
-
-    filters = GenericMetadataFilter(
-        user_id=user_id,
-    )
-
-    vector_db_client = get_vector_db_client()
-    vector_result = vector_db_client.search_documents(query="", k=1, filters=filters)
-
-    if vector_result:
-        return vector_result[0].page_content
-    return ""
-
 def combine_system_messages(messages: list[BaseMessage]) -> list[BaseMessage]:
     system_messages = [m.content for m in messages if isinstance(m, SystemMessage)] # TODO what are other system messages
     other_messages = [m for m in messages if not isinstance(m, SystemMessage)] # here are the tools
@@ -128,10 +119,10 @@ def combine_system_messages(messages: list[BaseMessage]) -> list[BaseMessage]:
     return [combined_system_msg] + other_messages
 
 
-def wrap_model(model: BaseChatModel, client_id: str, user_question: str) -> RunnableSerializable[Any, BaseMessage]:
+def wrap_model(model: BaseChatModel, user_id: str, user_question: str) -> RunnableSerializable[Any, BaseMessage]:
     model = model.bind_tools(get_agent_tools()).with_config(
         metadata={
-            "client_id": client_id,
+            "user_id": user_id,
             "user_question": user_question,
         }
     )
@@ -145,12 +136,12 @@ def wrap_model(model: BaseChatModel, client_id: str, user_question: str) -> Runn
 async def acall_model(state: AgentState, config: RunnableConfig) -> AgentState:
     model = get_model(get_agent_request_value(config, "model", settings.DEFAULT_MODEL))
 
-    client_id = get_agent_request_value(config, "client_id", "")
+    user_id = get_agent_request_value(config, "user_id", "")
     user_question = get_last_user_message_content(state)
     
     print(f"LAST USER User question: {user_question}")
 
-    model_runnable = wrap_model(model, client_id, user_question)
+    model_runnable = wrap_model(model, user_id, user_question)
 
     response = await model_runnable.ainvoke(state, config)
     state["messages"].append(response)

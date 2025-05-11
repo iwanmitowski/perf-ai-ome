@@ -54,8 +54,10 @@ def recommend_fragrances_func(
     - Discovery of perfumes with desired performance characteristics (e.g. long-lasting, strong projection)
 
     Limitations:
+    - Use *only* when the user has provided at least one preference (e.g. types, notes, longevity, sillage, brandName, or fragranceName).
+    - If they only ask for a recommendations without any criteria, do NOT use this tool.
     - Does NOT provide detailed reviews, ingredient breakdowns, or purchase links.
-    - Does not allow free-text search beyond structured fields.
+    - Does NOT allow free-text search beyond structured fields.
 
     Args:
         types (List[str]): Categories of fragrance (e.g. "Woody", "Floral", "Gourmand", "Fresh", "Oriental").
@@ -75,6 +77,7 @@ def recommend_fragrances_func(
     Returns:
         List[Fragrance]: A curated list of recommended fragrances matching the input preferences.
     """
+    print("=================recommend_fragrances_func")
     user_id = get_agent_request_value(config, "user_id")
     logger.info(f"Recommending fragrances for user with ID: {user_id}")
 
