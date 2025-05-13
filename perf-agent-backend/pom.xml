@@ -45,6 +45,44 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		 <!-- Jackson -->
+		<dependency>
+			<groupId>com.example.perf_agent_backend.lib</groupId>
+			<artifactId>com.fasterxml.jackson.databind</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.example.perf_agent_backend.lib</groupId>
+			<artifactId>jackson-annotations-2.1.2</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.example.perf_agent_backend.lib</groupId>
+			<artifactId>jackson-core-2.2.3</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- JADE agent framework -->
+		<dependency>
+			<groupId>com.example.perf_agent_backend.lib</groupId>
+			<artifactId>jade</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- HermiT reasoner -->
+		<dependency>
+			<groupId>com.example.perf_agent_backend.lib</groupId>
+			<artifactId>org.semanticweb.HermiT</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- OWLAPI core distribution -->
+		<dependency>
+			<groupId>com.example.perf_agent_backend.lib</groupId>
+			<artifactId>owlapi-distribution-3.5.0</artifactId>
+			<version>1.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
