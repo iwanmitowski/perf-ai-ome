@@ -2,12 +2,32 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 function App() {
   const [count, setCount] = useState(0)
+      const LoginButton = () => {
+      const { loginWithRedirect } = useAuth0();
+
+      return <button onClick={() => loginWithRedirect()}>Log In</button>;
+    };
+
+
+  const LogoutButton = () => {
+  const { logout } = useAuth0();
+
+  return (
+    <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+      Log Out
+    </button>
+  );
+};
 
   return (
     <>
+      <LoginButton />
+      <LogoutButton />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

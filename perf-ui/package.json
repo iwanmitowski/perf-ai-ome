@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.3.0",
+    "@tanstack/react-query": "^5.76.1",
+    "@tanstack/react-router": "^1.120.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
