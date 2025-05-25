@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useAuth0 } from "@auth0/auth0-react";
-
+import { Button } from "@/components/ui/button";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +26,8 @@ function App() {
 
   return (
     <>
+      <Button variant="default">Default</Button>
+      <Button variant="destructive">Destructive</Button>
       <LoginButton />
       <LogoutButton />
       <div>
