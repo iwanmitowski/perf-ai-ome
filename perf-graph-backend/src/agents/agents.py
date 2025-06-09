@@ -6,9 +6,9 @@ from agents.agentic_rag import agentic_rag
 from core import settings
 from schema import AgentInfo
 
-DEFAULT_AGENT = settings.DEFAULT_AGENT
 
 RECOMMENDATION_AGENT = "agentic-rag-alfa"
+DEFAULT_AGENT = settings.DEFAULT_AGENT
 
 @dataclass
 class Agent:

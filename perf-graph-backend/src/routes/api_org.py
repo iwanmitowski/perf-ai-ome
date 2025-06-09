@@ -12,7 +12,7 @@ from langchain_core.documents import Document
 import json
 from fastapi import APIRouter, HTTPException, Header, Request, UploadFile, Depends, Body
 import re
-from agents.agents import DEFAULT_AGENT, RECOMMENDATION_AGENT
+from agents.agents import DEFAULT_AGENT
 from core.persistence.db_factory import get_schema_db_client, get_vector_db_client
 from typing import List, Optional, Annotated
 from schema.org import User, Project

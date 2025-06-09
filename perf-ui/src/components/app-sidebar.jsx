@@ -29,7 +29,7 @@ import {
 const items = [
   {
     title: "Home", // How are you feeling, what is your mood today? etc
-    url: "#",
+    url: "/",
     icon: Smile,
   },
   {
@@ -39,10 +39,21 @@ const items = [
   },
   {
     title: "Scent Feed", // daily news, recommendations
-    url: "#",
+    url: "/feed",
     icon: Flame,
   },
 ];
+{
+  /* <div className="p-2 flex gap-2">
+        <Link to="/" className="[&.active]:font-bold">
+          Home
+        </Link>{" "}
+        <Link to="/dashboard" className="[&.active]:font-bold">
+          Dashboard
+        </Link>{" "}
+      </div>
+      <hr /> */
+}
 
 // Infinite scroll to load chats
 const chats = [

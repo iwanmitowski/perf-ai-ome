@@ -10,6 +10,7 @@ from langchain_core.messages import AnyMessage
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph.state import CompiledStateGraph
 from langgraph.types import Command
+from fastapi import Response
 
 from agents import DEFAULT_AGENT, get_agent
 from schema import (
@@ -157,6 +158,10 @@ def _sse_response_example() -> dict[int, Any]:
         }
     }
 
+@router.options("/{agent_id}/stream")
+@router.options("/stream")
+async def stream_options(agent_id: str = DEFAULT_AGENT):
+    return Response(status_code=204)
 
 @router.post(
     "/{agent_id}/stream",
@@ -185,6 +190,11 @@ async def stream(user_input: StreamInput, agent_id: str = DEFAULT_AGENT) -> Stre
     return StreamingResponse(
         stream_message_generator(user_input, agent_id),
         media_type="text/event-stream",
+        headers={
+            "Access-Control-Allow-Origin": "http://localhost:5173",  # or "*"
+            "Access-Control-Allow-Methods": "POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+        },
     )
 
 
