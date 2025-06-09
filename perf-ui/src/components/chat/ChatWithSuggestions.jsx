@@ -1,5 +1,6 @@
-import { useChat } from "ai/react";
 import { Chat } from "@/components/ui/chat";
+
+import { useSSEChat } from "@/hooks/use-sse-chat";
 
 export function ChatWithSuggestions() {
   const {
@@ -10,33 +11,7 @@ export function ChatWithSuggestions() {
     append,
     isLoading,
     stop,
-  } = useChat({
-    api: "http://localhost:8088",
-
-    fetch: async (url, options) => {
-      // userTypedText === whatever is currently in the input box
-      console.log("messages array:", messages);
-      const body = JSON.parse(options.body);
-      const last = body.messages?.[body.messages.length - 1];
-      const message = last?.content ?? "";
-      return fetch("http://localhost:8088/agentic-rag-alfa/stream", {
-        ...options,
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: message,
-          model: "gpt-4o",
-          thread_id: localStorage.getItem("threadId") ?? crypto.randomUUID(),
-          stream_tokens: true,
-        }),
-      });
-    },
-    streamMode: "sse",
-    // Tell useChat that the response is SSE (“data:” frames)
-    streamProtocol: "data",
-  });
+  } = useSSEChat();
 
   return (
     <Chat

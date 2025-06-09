@@ -191,7 +191,9 @@ async def stream(user_input: StreamInput, agent_id: str = DEFAULT_AGENT) -> Stre
         stream_message_generator(user_input, agent_id),
         media_type="text/event-stream",
         headers={
-            "Access-Control-Allow-Origin": "http://localhost:5173",  # or "*"
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "Access-Control-Allow-Origin": "http://localhost:5173",
             "Access-Control-Allow-Methods": "POST, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type",
         },

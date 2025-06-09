@@ -44,18 +44,24 @@ def provide_answer_for_missing_information(user_question: str, config: RunnableC
     print("=================provide_answer_for_missing_information")
     user_id = get_agent_request_value(config, "user_id")
 
-    user_preferences = get_vector_db_client().get_document(user_id).page_content.strip()
+    # 1) fetch the raw document object
+    doc = get_vector_db_client().get_document(doc_id=user_id)
 
-    if not user_preferences or user_preferences == "":
-        user_preferences = "No user preferences found. Provide information according to the user question."
+    # 2) extract just the textual content, with a default
+    if doc and getattr(doc, "page_content", "").strip():
+        prefs_text = doc.page_content.strip()
+    else:
+        prefs_text = "No user preferences found. Provide information according to the user question."
 
-    print("user_preferences")
-    print(user_preferences)
+    print("user_preferences:")
+    print(prefs_text)
 
-    logger.info(f"Getting fragrancess")
-    ai_msg = ask_llm(user_question, user_preferences)
-    print("ai_msg")
+    logger.info("Getting fragrances…")
+    ai_msg = ask_llm(user_question, prefs_text)
+
+    print("ai_msg:")
     print(ai_msg)
+
     response = ToolResponse(
         message=ai_msg,
         assets=[]
