@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as ProtectedImport } from './routes/_protected'
 import { Route as IndexImport } from './routes/index'
+import { Route as ProtectedPreferencesImport } from './routes/_protected/preferences'
 
 // Create/Update Routes
 
@@ -25,6 +26,12 @@ const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
+} as any)
+
+const ProtectedPreferencesRoute = ProtectedPreferencesImport.update({
+  id: '/preferences',
+  path: '/preferences',
+  getParentRoute: () => ProtectedRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
@@ -45,44 +52,66 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProtectedImport
       parentRoute: typeof rootRoute
     }
+    '/_protected/preferences': {
+      id: '/_protected/preferences'
+      path: '/preferences'
+      fullPath: '/preferences'
+      preLoaderRoute: typeof ProtectedPreferencesImport
+      parentRoute: typeof ProtectedImport
+    }
   }
 }
 
 // Create and export the route tree
 
+interface ProtectedRouteChildren {
+  ProtectedPreferencesRoute: typeof ProtectedPreferencesRoute
+}
+
+const ProtectedRouteChildren: ProtectedRouteChildren = {
+  ProtectedPreferencesRoute: ProtectedPreferencesRoute,
+}
+
+const ProtectedRouteWithChildren = ProtectedRoute._addFileChildren(
+  ProtectedRouteChildren,
+)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '': typeof ProtectedRoute
+  '': typeof ProtectedRouteWithChildren
+  '/preferences': typeof ProtectedPreferencesRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '': typeof ProtectedRoute
+  '': typeof ProtectedRouteWithChildren
+  '/preferences': typeof ProtectedPreferencesRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/_protected': typeof ProtectedRoute
+  '/_protected': typeof ProtectedRouteWithChildren
+  '/_protected/preferences': typeof ProtectedPreferencesRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | ''
+  fullPaths: '/' | '' | '/preferences'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | ''
-  id: '__root__' | '/' | '/_protected'
+  to: '/' | '' | '/preferences'
+  id: '__root__' | '/' | '/_protected' | '/_protected/preferences'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ProtectedRoute: typeof ProtectedRoute
+  ProtectedRoute: typeof ProtectedRouteWithChildren
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ProtectedRoute: ProtectedRoute,
+  ProtectedRoute: ProtectedRouteWithChildren,
 }
 
 export const routeTree = rootRoute
@@ -103,7 +132,14 @@ export const routeTree = rootRoute
       "filePath": "index.jsx"
     },
     "/_protected": {
-      "filePath": "_protected.jsx"
+      "filePath": "_protected.jsx",
+      "children": [
+        "/_protected/preferences"
+      ]
+    },
+    "/_protected/preferences": {
+      "filePath": "_protected/preferences.jsx",
+      "parent": "/_protected"
     }
   }
 }

@@ -23,9 +23,9 @@ export function ChatWithSuggestions() {
       stop={stop}
       append={append}
       suggestions={[
-        "Generate a tasty vegan lasagna recipe for 3 people.",
-        "Generate a list of 5 questions for a frontend job interview.",
-        "Who won the 2022 FIFA World Cup?",
+        "I'm feeling happy today, suggest me 2 fresh fragrances.",
+        "I'm attending a wedding, suggest me a scent.",
+        "What are the top 3 trending perfumes right now?",
       ]}
     />
   );

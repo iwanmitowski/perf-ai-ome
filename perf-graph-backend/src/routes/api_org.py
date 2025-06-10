@@ -1,25 +1,10 @@
 import logging
-import traceback
-import uuid
-import asyncio
-import os
-
-
-import httpx
-from bson import ObjectId
 from langchain_core.documents import Document
 
 import json
-from fastapi import APIRouter, HTTPException, Header, Request, UploadFile, Depends, Body
-import re
-from agents.agents import DEFAULT_AGENT
+from fastapi import APIRouter, HTTPException, Body
 from core.persistence.db_factory import get_schema_db_client, get_vector_db_client
-from typing import List, Optional, Annotated
-from schema.org import User, Project
-from core import settings
-from langchain_community.document_loaders.pdf import PyPDFLoader
-from datetime import datetime
-from langchain.text_splitter import TokenTextSplitter
+from schema.preferences import ScentProfile
 from langchain_core.documents import Document
 
 router = APIRouter()
@@ -42,6 +27,26 @@ async def get_all_vectors():
         cleaned_docs.append(metadata)
 
     return cleaned_docs
+
+@router.post("/user/{user_id}/scent-profile", summary="Save scent profile quiz", tags=["User"])
+async def save_scent_profile(user_id: str, profile: ScentProfile):
+    client = get_vector_db_client()
+    document = Document(page_content=json.dumps(profile.model_dump()), metadata={"type": "scent_profile"})
+    client.update_document(f"scent-{user_id}", document)
+    return {"message": "Scent profile saved"}
+
+
+@router.get("/user/{user_id}/scent-profile", summary="Get scent profile", tags=["User"])
+async def get_scent_profile(user_id: str):
+    client = get_vector_db_client()
+    doc = client.get_document(f"scent-{user_id}")
+    if not doc:
+        raise HTTPException(status_code=404, detail="Profile not found")
+    try:
+        data = json.loads(doc.page_content)
+    except Exception:
+        data = {}
+    return {"user_id": user_id, "profile": data}
 
 @router.post("/user/{user_id}", summary="Create user information in vector db", tags=["User"])
 async def create_user_record(

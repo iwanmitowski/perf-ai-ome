@@ -1,9 +1,12 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useRef } from "react";
 
 export function useSSEChat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const { user } = useAuth0();
+  console.log("user", user);
   const abortRef = useRef(null);
 
   const handleInputChange = (e) => {

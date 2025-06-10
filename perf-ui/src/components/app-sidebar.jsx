@@ -11,6 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import { useAuth0 } from "@auth0/auth0-react";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -75,6 +76,7 @@ const chats = [
 ];
 
 export function AppSidebar() {
+  const { logout, isAuthenticated, loginWithRedirect } = useAuth0();
   return (
     <Sidebar>
       <SidebarHeader />
@@ -129,12 +131,22 @@ export function AppSidebar() {
                 side="top"
                 className="w-[--radix-popper-anchor-width]"
               >
-                <DropdownMenuItem>
-                  <span>Preferences</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <span>Sign out</span>
-                </DropdownMenuItem>
+                {isAuthenticated ? (
+                  <>
+                    <DropdownMenuItem>
+                      <a href="/preferences">
+                        <span>Preferences</span>
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <span onClick={logout}>Sign out</span>
+                    </DropdownMenuItem>
+                  </>
+                ) : (
+                  <DropdownMenuItem>
+                    <span onClick={loginWithRedirect}>Login</span>
+                  </DropdownMenuItem>
+                )}
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
