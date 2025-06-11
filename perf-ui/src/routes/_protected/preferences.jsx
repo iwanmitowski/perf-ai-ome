@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ScentProfileQuiz from "@/components/preferences/ScentProfileQuiz";
 import { createFileRoute } from "@tanstack/react-router";
+
+import ScentProfileQuiz from "@/components/preferences/ScentProfileQuiz";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -18,12 +19,28 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+
+import { Wand2, Dna, FlaskConical, Heart, HeartOff } from "lucide-react";
+import { toast } from "sonner";
+
+const sillageLabels = {
+  BeastModeSillage: "Soft",
+  ModerateSillage: "Moderate",
+  StrongSillage: "Strong",
+};
+
+const longevityLabels = {
+  ShortLongevity: "Intimate",
+  ModerateLongevity: "Moderate",
+  LongLongevity: "Long-Lasting",
+};
 
 export const Route = createFileRoute("/_protected/preferences")({
   loader: async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8088/user/user-123/scent-profile"
+        "http://localhost:8088/user/user-666/scent-profile"
       );
       return res.data.profile;
     } catch {
@@ -37,24 +54,119 @@ function Preferences() {
   const profile = Route.useLoaderData();
   const [quizAnswers, setQuizAnswers] = useState(profile);
   const [isQuizOpen, setIsQuizOpen] = useState(false);
+  const [logValue, setLogValue] = useState("");
 
   useEffect(() => {
     setQuizAnswers(profile);
   }, [profile]);
 
+  const handleLog = async (field) => {
+    if (!logValue) return;
+    const updated = {
+      ...quizAnswers,
+      [field]: quizAnswers[field]
+        ? `${quizAnswers[field]}, ${logValue}`
+        : logValue,
+    };
+    try {
+      await axios.post(
+        "http://localhost:8088/user/user-666/scent-profile",
+        updated
+      );
+      toast.success("Saved", { description: `Logged as ${field}` });
+      setQuizAnswers(updated);
+      setLogValue("");
+    } catch (e) {
+      toast.error("Failed", {
+        description: `Could not save: ${e.message}`,
+      });
+    }
+  };
+
+  if (!quizAnswers) {
+    return (
+      <>
+        <div className="flex flex-col items-center justify-center h-[60vh] text-center p-4">
+          <Dna className="w-16 h-16 mb-4 text-primary" />
+          <h1 className="text-2xl font-bold">Discover Your Scent DNA</h1>
+          <p className="text-muted-foreground mt-2 mb-6 max-w-md">
+            Take our quick quiz to build your personal scent profile. We'll use
+            it to find fragrances you'll love.
+          </p>
+          <Button size="lg" onClick={() => setIsQuizOpen(true)}>
+            Take the Scent Quiz
+          </Button>
+        </div>
+
+        <Dialog open={isQuizOpen} onOpenChange={setIsQuizOpen}>
+          <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col">
+            <DialogHeader>
+              <DialogTitle>Your Scent Profile Quiz</DialogTitle>
+            </DialogHeader>
+            <div className="overflow-y-auto pr-2">
+              <ScentProfileQuiz
+                initialAnswers={{}}
+                onComplete={(ans) => {
+                  setQuizAnswers(ans);
+                  setIsQuizOpen(false);
+                }}
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
+      </>
+    );
+  }
+
   return (
-    <div className="space-y-8 p-4 max-w-xl mx-auto">
-      <Card>
-        <CardHeader>
-          <CardTitle>Core Profile</CardTitle>
-          <CardDescription>
-            This is your foundational scent profile. Retake the quiz anytime to
-            update it.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {quizAnswers ? (
-            <div className="space-y-4">
+    <div className="max-w-5xl mx-auto p-4 md:p-8 space-y-8">
+      <div className="flex flex-col md:flex-row justify-between items-start gap-4">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">
+            Your Scent Profile
+          </h1>
+          <p className="text-muted-foreground">
+            A living dashboard of your fragrance preferences. Refine it anytime.
+          </p>
+        </div>
+        <Button onClick={() => setIsQuizOpen(true)}>Retake Full Quiz</Button>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <Card className="lg:col-span-2 bg-gradient-to-br from-primary/10 to-background">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Wand2 className="w-5 h-5 text-primary" />
+              AI-Powered Recommendations
+            </CardTitle>
+            <CardDescription>
+              Let our AI analyze your Scent Genome to reveal your perfect
+              fragrance matches.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>
+              Ready to find your next signature scent? Let our AI do the work.
+            </p>
+          </CardContent>
+          <CardFooter>
+            <Button>Find My Perfect Scent</Button>
+          </CardFooter>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Dna className="w-5 h-5" />
+              Scent DNA
+            </CardTitle>
+            <CardDescription>
+              The core of your taste, based on your quiz answers.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-sm mb-2">Vibe & Scene</h4>
               <div className="flex flex-wrap gap-2">
                 <Badge variant="secondary" className="capitalize">
                   {quizAnswers.vibe?.replace("_", " & ")}
@@ -62,62 +174,126 @@ function Preferences() {
                 <Badge variant="secondary" className="capitalize">
                   {quizAnswers.scene}
                 </Badge>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold text-sm mb-2">Favorite Elements</h4>
+              <div className="flex flex-wrap gap-2">
                 {quizAnswers.elements?.map((el) => (
                   <Badge key={el} variant="outline" className="capitalize">
                     {el}
                   </Badge>
                 ))}
               </div>
-              {quizAnswers.loved && (
-                <p className="text-sm">
-                  <span className="font-semibold">Loved:</span>{" "}
-                  {quizAnswers.loved}
-                </p>
-              )}
-              {quizAnswers.disliked && (
-                <p className="text-sm">
-                  <span className="font-semibold">Disliked:</span>{" "}
-                  {quizAnswers.disliked}
-                </p>
-              )}
-              <p className="text-sm">
-                <span className="font-semibold">Sillage:</span>{" "}
-                {quizAnswers.sillage}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <FlaskConical className="w-5 h-5" />
+              Performance Profile
+            </CardTitle>
+            <CardDescription>
+              How you like your fragrances to perform.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3 text-sm">
+            <div className="flex justify-between items-center">
+              <span className="font-semibold">Sillage (Projection):</span>
+              <Badge variant="default">
+                {sillageLabels[quizAnswers.sillage] || quizAnswers.sillage}
+              </Badge>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="font-semibold">Longevity (Duration):</span>
+              <Badge variant="default">
+                {longevityLabels[quizAnswers.longevity] ||
+                  quizAnswers.longevity}
+              </Badge>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Your Fragrance Wardrobe</CardTitle>
+            <CardDescription>
+              Log scents you've tried to fine-tune your recommendations. The
+              more you add, the smarter our AI gets.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <h4 className="font-semibold flex items-center gap-2">
+                <Heart className="w-4 h-4 text-green-500" />
+                Loved Scents
+              </h4>
+              <p className="text-muted-foreground text-sm">
+                {quizAnswers.loved || "Log a scent you love to get started."}
               </p>
-              <p className="text-sm">
-                <span className="font-semibold">Longevity:</span>{" "}
-                {quizAnswers.longevity}
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-semibold flex items-center gap-2">
+                <HeartOff className="w-4 h-4 text-red-500" />
+                Disliked Scents
+              </h4>
+              <p className="text-muted-foreground text-sm">
+                {quizAnswers.disliked ||
+                  "Log a scent you dislike to help us avoid them."}
               </p>
-              {quizAnswers.additional && (
-                <p className="text-sm whitespace-pre-line">
-                  <span className="font-semibold">Notes:</span>{" "}
+            </div>
+            {quizAnswers.additional && (
+              <div className="space-y-2">
+                <h4 className="font-semibold">Additional Notes</h4>
+                <p className="text-sm text-muted-foreground whitespace-pre-line">
                   {quizAnswers.additional}
                 </p>
-              )}
+              </div>
+            )}
+          </CardContent>
+          <CardFooter className="flex flex-col sm:flex-row gap-2">
+            <Input
+              placeholder="Enter a fragrance name..."
+              className="flex-grow"
+              value={logValue}
+              onChange={(e) => setLogValue(e.target.value)}
+            />
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                onClick={() => handleLog("loved")}
+                disabled={!logValue}
+              >
+                Log as Loved
+              </Button>
+              <Button
+                variant="destructive"
+                onClick={() => handleLog("disliked")}
+                disabled={!logValue}
+              >
+                Log as Disliked
+              </Button>
             </div>
-          ) : (
-            <p>You haven't completed the scent quiz yet.</p>
-          )}
-        </CardContent>
-        <CardFooter>
-          <Button onClick={() => setIsQuizOpen(true)}>
-            {quizAnswers ? "Retake Scent Quiz" : "Take Scent Quiz"}
-          </Button>
-        </CardFooter>
-      </Card>
+          </CardFooter>
+        </Card>
+      </div>
 
       <Dialog open={isQuizOpen} onOpenChange={setIsQuizOpen}>
-        <DialogContent className="overflow-auto">
+        <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col">
           <DialogHeader>
-            <DialogTitle>Scent Quiz</DialogTitle>
+            <DialogTitle>Your Scent Profile Quiz</DialogTitle>
           </DialogHeader>
-          <ScentProfileQuiz
-            initialAnswers={quizAnswers || {}}
-            onComplete={(ans) => {
-              setQuizAnswers(ans);
-              setIsQuizOpen(false);
-            }}
-          />
+          <div className="overflow-y-auto pr-2">
+            <ScentProfileQuiz
+              initialAnswers={quizAnswers || {}}
+              onComplete={(ans) => {
+                setQuizAnswers(ans);
+                setIsQuizOpen(false);
+              }}
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </div>

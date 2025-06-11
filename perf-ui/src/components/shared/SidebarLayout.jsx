@@ -5,7 +5,7 @@ export default function SidebarLayout({ children }) {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main>
+      <main className="flex-1 flex flex-col">
         <SidebarTrigger />
         {children}
       </main>

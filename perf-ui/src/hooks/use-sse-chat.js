@@ -42,7 +42,7 @@ export function useSSEChat() {
           model: "gpt-4o",
           thread_id: threadId,
           stream_tokens: true,
-          user_id: "user-123",
+          user_id: "user-666",
         }),
         signal: abortRef.current.signal,
       });
