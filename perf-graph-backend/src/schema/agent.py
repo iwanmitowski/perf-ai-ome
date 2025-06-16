@@ -43,7 +43,11 @@ class UserInput(BaseModel):
         default=None,
         examples=["847c6285-8fc9-4560-a83f-4e6285809254"],
     )
-
+    user_id: str = Field(
+        description="User ID to associate the request with.",
+        default=None,
+        examples=["847c6285-8fc9-4560-a83f-4e6285809254"],
+    )
     agent_config: Dict[str, Any] = Field(
         description="Additional configuration to pass through to the agent",
         default=None,

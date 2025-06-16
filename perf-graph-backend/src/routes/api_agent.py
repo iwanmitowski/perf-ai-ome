@@ -28,10 +28,8 @@ router = APIRouter()
 
 def _parse_input(user_input: UserInput) -> tuple[dict[str, Any], UUID]:
     run_id = uuid4()
-    thread_id = str(
-        uuid4())  # until tools are reintegrated for multi conversation, we consider all conversation as unique
 
-    configurable = {"thread_id": thread_id, "model": user_input.model}
+    configurable = {"thread_id": user_input.thread_id, "model": user_input.model, "user_id": user_input.user_id}
 
     if user_input.agent_config:
         if overlap := configurable.keys() & user_input.agent_config.keys():
