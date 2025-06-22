@@ -40,6 +40,8 @@ class RecommendationClient:
         print("Payload")
         print(payload)
 
+        payload = {k: v for k, v in payload.items() if v is not None}
+
         try:
             response = requests.post(url, json=payload, headers=self.headers)
             response.raise_for_status()
