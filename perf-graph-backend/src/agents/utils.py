@@ -14,7 +14,7 @@ class AgentState(MessagesState, total=False):
     """Agent state containing conversation history."""
     tool_calls: list[ToolCall]
     assets: list[dict]
-
+    retrieved_docs: str
 
 class ToolAsset(BaseModel):
     id: str

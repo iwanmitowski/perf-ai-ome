@@ -8,7 +8,7 @@ from langchain_core._api import LangChainBetaWarning
 from routes.api_agent import router as agent_router
 from routes.api_org import router as org_router
 from routes.api_service import router as service_router
-from fastapi.staticfiles import StaticFiles
+from routes.api_thread import router as thread_router
 
 warnings.filterwarnings("ignore", category=LangChainBetaWarning)
 logger = logging.getLogger(__name__)
@@ -56,6 +56,7 @@ def create_app() -> FastAPI:
     app.include_router(agent_router)
     app.include_router(org_router)
     app.include_router(service_router)
+    app.include_router(thread_router)
 
     class HealthCheckFilter(logging.Filter):
         def filter(self, record: logging.LogRecord) -> bool:

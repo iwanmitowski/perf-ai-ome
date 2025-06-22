@@ -12,6 +12,7 @@ import {
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useThreads } from "@/hooks/thread-context";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -24,8 +25,10 @@ import {
   Smile,
   MessagesSquare,
   Flame,
+  Plus,
   ChevronUp,
 } from "lucide-react";
+import { useEffect } from "react";
 
 const items = [
   {
@@ -56,27 +59,26 @@ const items = [
       <hr /> */
 }
 
-// Infinite scroll to load chats
-const chats = [
-  {
-    title: "Chat 1",
-    threadId: "chat-1",
-    icon: MessageCircle,
-  },
-  {
-    title: "Chat 1",
-    threadId: "chat-1",
-    icon: MessageCircle,
-  },
-  {
-    title: "Chat 1",
-    threadId: "chat-1",
-    icon: MessageCircle,
-  },
-];
-
 export function AppSidebar() {
   const { logout, isAuthenticated, loginWithRedirect } = useAuth0();
+
+  const { threads, setThreadId, loadThreads } = useThreads();
+
+  useEffect(() => {
+    loadThreads();
+    return loadThreads;
+  }, [loadThreads]);
+
+  const selectChat = (threadId) => {
+    setThreadId(threadId);
+  };
+
+  const newChat = () => {
+    const id = crypto.randomUUID();
+    setThreadId(id);
+    loadThreads();
+  };
+
   return (
     <Sidebar>
       <SidebarHeader />
@@ -102,12 +104,20 @@ export function AppSidebar() {
           <SidebarGroupLabel>Chats</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {chats.map((item) => (
-                <SidebarMenuSubItem key={item.title}>
+              <SidebarMenuSubItem>
+                <SidebarMenuButton asChild>
+                  <a href="#" onClick={newChat}>
+                    <Plus />
+                    <span>New Chat</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuSubItem>
+              {threads.map((item) => (
+                <SidebarMenuSubItem key={item.thread_id}>
                   <SidebarMenuButton asChild>
-                    <a href={item.threadId}>
-                      <item.icon />
-                      <span>{item.title}</span>
+                    <a href="#" onClick={() => selectChat(item.thread_id)}>
+                      <MessageCircle />
+                      <span>{item.summary}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuSubItem>

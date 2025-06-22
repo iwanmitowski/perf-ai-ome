@@ -9,6 +9,7 @@ from schema.agent import (
     UserInput,
 )
 from schema.preferences import ScentProfile
+from schema.thread import ChatThreadInput, ChatThread
 
 __all__ = [
     "AgentInfo",
@@ -19,5 +20,7 @@ __all__ = [
     "StreamInput",
     "ChatHistoryInput",
     "ChatHistory",
-    "ScentProfile"
+    "ScentProfile",
+    "ChatThreadInput",
+    "ChatThread",
 ]

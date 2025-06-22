@@ -1,13 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useThreads } from "@/hooks/thread-context";
 
 export function useSSEChat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { user } = useAuth0();
-  console.log("user", user);
   const abortRef = useRef(null);
+  const { user } = useAuth0();
+  const { threadId, setThreadId, loadThreads } = useThreads();
+  console.log("user", user);
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
@@ -22,8 +24,22 @@ export function useSSEChat() {
     const userMessage = { role: "user", content: text };
     setMessages((prev) => [...prev, userMessage]);
 
-    const threadId = localStorage.getItem("threadId") ?? crypto.randomUUID();
-    localStorage.setItem("threadId", threadId);
+    let id = threadId;
+    if (!id) {
+      id = newThread();
+    }
+
+    fetch("http://localhost:8088/threads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        thread_id: id,
+        user_id: "user-666",
+        summary: text.slice(0, 50),
+      }),
+    })
+      .then(() => loadThreads())
+      .catch((e) => console.error(e));
 
     abortRef.current = new AbortController();
     setIsLoading(true);
@@ -40,7 +56,7 @@ export function useSSEChat() {
         body: JSON.stringify({
           message: userMessage.content,
           model: "gpt-4o",
-          thread_id: threadId,
+          thread_id: id,
           stream_tokens: true,
           user_id: "user-666",
         }),
@@ -115,6 +131,33 @@ export function useSSEChat() {
   const append = async (message) => {
     await sendMessage(message.content);
   };
+
+  const loadHistory = async (threadId) => {
+    setMessages([]);
+    try {
+      const res = await fetch("http://localhost:8088/history", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ thread_id: threadId }),
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      setMessages(data.messages ?? []);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const newThread = () => {
+    const id = crypto.randomUUID();
+    setThreadId(id);
+    setMessages([]);
+    return id;
+  };
+
+  useEffect(() => {
+    loadHistory(threadId);
+  }, [threadId]);
 
   return {
     messages,

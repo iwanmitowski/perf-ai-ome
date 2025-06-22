@@ -152,6 +152,9 @@ class MilvusClientWrapper(BaseVectorDBClient):
             if k not in {self.vectorstore._primary_field, self.vectorstore._text_field}
         }
         
+        print("GET DOCUMENT")
+        print(metadata)
+
         return Document(page_content=text, metadata=metadata)
 
     def update_document(self, doc_id: str, document: Document):
