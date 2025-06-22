@@ -21,7 +21,7 @@ export function useSSEChat() {
   };
 
   const sendMessage = async (text) => {
-    const userMessage = { role: "user", content: text };
+    const userMessage = { role: "human", content: text };
     setMessages((prev) => [...prev, userMessage]);
 
     let id = threadId;
@@ -142,7 +142,11 @@ export function useSSEChat() {
       });
       if (!res.ok) return;
       const data = await res.json();
-      setMessages(data.messages ?? []);
+      const msgs = (data.messages ?? []).map((m) => ({
+        ...m,
+        role: m.role ?? m.type,
+      }));
+      setMessages(msgs);
     } catch (e) {
       console.error(e);
     }

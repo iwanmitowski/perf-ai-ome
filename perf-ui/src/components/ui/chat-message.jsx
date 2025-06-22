@@ -72,7 +72,7 @@ export const ChatMessage = ({
     });
   }, [experimental_attachments]);
 
-  const isUser = role === "user";
+  const isUser = role === "human";
 
   const formattedTime = createdAt?.toLocaleTimeString("en-US", {
     hour: "2-digit",
