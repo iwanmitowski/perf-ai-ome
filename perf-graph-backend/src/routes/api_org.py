@@ -3,6 +3,7 @@ from langchain_core.documents import Document
 
 import json
 from fastapi import APIRouter, HTTPException, Body
+from langchain_core.documents import Document
 from core.persistence.db_factory import get_schema_db_client, get_vector_db_client
 from schema.preferences import ScentProfile
 from langchain_core.documents import Document
@@ -30,22 +31,27 @@ async def get_all_vectors():
 
 @router.post("/user/{user_id}/scent-profile", summary="Save scent profile quiz", tags=["User"])
 async def save_scent_profile(user_id: str, profile: ScentProfile):
-    client = get_vector_db_client()
-    document = Document(page_content=json.dumps(profile.model_dump()), metadata={"type": "scent_profile"})
-    client.update_document(user_id, document)
+    mongo_client = get_schema_db_client()
+    prefs_col = mongo_client.get_collection("user_preferences")
+    prefs_col.update_one(
+        {"_id": user_id},
+        {"$set": {"preferences": profile.model_dump()}},
+        upsert=True,
+    )
+
     return {"message": "Scent profile saved"}
 
 
 @router.get("/user/{user_id}/scent-profile", summary="Get scent profile", tags=["User"])
 async def get_scent_profile(user_id: str):
-    client = get_vector_db_client()
-    doc = client.get_document(user_id)
-    if not doc:
-        raise HTTPException(status_code=404, detail="Profile not found")
-    try:
-        data = json.loads(doc.page_content)
-    except Exception:
-        data = {}
+    db = get_schema_db_client()
+    prefs_col = db.get_collection("user_preferences")
+
+    doc = prefs_col.find_one({"_id": user_id})
+    if doc is None:
+        raise HTTPException(status_code=404, detail="User not found")
+
+    data = doc.get("preferences", {})
     return {"user_id": user_id, "profile": data}
 
 @router.post("/user/{user_id}", summary="Create user information in vector db", tags=["User"])

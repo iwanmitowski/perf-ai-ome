@@ -16,10 +16,21 @@ from langgraph.graph import StateGraph, END
 # Assuming these are correctly imported from your project structure
 from agents.tools.recommend_fragrances import recommend_fragrances_func, FragranceRecommendationInput
 from agents.tools.unknown_information import provide_answer_for_missing_information, UnknownInformationInput
-from agents.utils import get_agent_request_value, get_last_user_message_content, AgentState, get_last_message, ToolResponse
+from agents.utils import (
+    get_agent_request_value,
+    get_last_user_message_content,
+    AgentState,
+    get_last_message,
+    ToolResponse,
+    document_to_string,
+)
+from core.persistence.db_factory import get_schema_db_client, get_vector_db_client
+from langchain_core.documents import Document
+from schema.chat import ChatTurn
 from core.persistence.db_factory import get_vector_db_client
 from core.persistence.vector_db import GenericMetadataFilter
 from core import get_model, settings
+from datetime import datetime, timezone
 
 logger = logging.getLogger(__name__)
 
@@ -65,22 +76,53 @@ def retrieve_data(state: AgentState, config: RunnableConfig) -> dict:
     to the 'retrieved_docs' field in the state.
     """
     user_id = get_agent_request_value(config, "user_id", "")
-    filters = GenericMetadataFilter(user_id=user_id)
+    thread_id = get_agent_request_value(config, "thread_id", "")
 
     last_user_message_content = get_last_user_message_content(state)
-    logger.info(f"Retrieving data for user '{user_id}' based on query: '{last_user_message_content}'")
+    logger.info(
+        f"Retrieving data for user '{user_id}' and '{thread_id}' based on query: '{last_user_message_content}'"
+    )
 
+    timestamp = datetime.now(timezone.utc).isoformat()
     vector_db_client = get_vector_db_client()
-    vector_result = vector_db_client.get_document(doc_id=user_id) 
+    doc_id = f"{user_id}-{thread_id}-{timestamp}"
+    chat_turn = ChatTurn(
+        question=last_user_message_content,
+        timestamp=timestamp,
+        user_id=user_id,
+        thread_id=thread_id,
+    )
+    document = Document(
+        page_content=json.dumps(chat_turn.model_dump()),
+        metadata={"user_id": user_id, "thread_id": thread_id, "timestamp": timestamp},
+    )
+    vector_db_client.add_document(doc_id, document)
 
-    if vector_result:
-        retrieved_docs = f"Here is some information about the user that might be relevant to the conversation:\n{vector_result.page_content.strip()}"
-        logger.info(f"User information found: {retrieved_docs}")
+    filters = GenericMetadataFilter(user_id=user_id)
+    search_results = vector_db_client.search_documents(
+        last_user_message_content, k=10000, filters=filters
+    )
+
+    if search_results:
+        retrieved_docs = "\n".join(
+            document_to_string(i + 1, doc, True) for i, doc in enumerate(search_results)
+        )
+        logger.info(f"Found {len(search_results)} relevant docs")
     else:
-        logger.info("No user information found.")
+        logger.info("No relevant documents found")
         retrieved_docs = NO_DOCS_FOUND_MESSAGE
 
-    return {"retrieved_docs": retrieved_docs}
+    mongo_client = get_schema_db_client()
+    prefs_col = mongo_client.get_collection("user_preferences")
+    prefs_doc = prefs_col.find_one({"_id": user_id})
+    user_prefs = prefs_doc.get("preferences") if prefs_doc else None
+
+    return {
+        "retrieved_docs": retrieved_docs,
+        "user_preferences": user_prefs,
+        "turn_doc_id": doc_id,
+        "turn_timestamp": timestamp,
+    }
 
 
 @lru_cache(maxsize=1)
@@ -140,13 +182,19 @@ def create_final_prompt(state: AgentState) -> List[BaseMessage]:
     The overall structure [SystemMessage] + all_history_messages is maintained.
     """
     retrieved_docs = state.get("retrieved_docs", "")
-    
+    user_prefs = state.get("user_preferences")
+
     # 'history' here is the complete list of messages from the state,
     # including the current user query.
     all_messages_in_state = state["messages"] 
     
     system_prompt_parts = [INIT_SYSTEM_INSTRUCTIONS]
     
+    if user_prefs:
+        system_prompt_parts.append("====== User Preferences Start ======")
+        system_prompt_parts.append(json.dumps(user_prefs))
+        system_prompt_parts.append("====== User Preferences End ======")
+
     # Add formatted retrieved documents (user information) to the system prompt
     if retrieved_docs and retrieved_docs != NO_DOCS_FOUND_MESSAGE:
         system_prompt_parts.append(f"==== RELEVANT USER INFORMATION ====\n{retrieved_docs}")
@@ -184,6 +232,24 @@ async def acall_model(state: AgentState, config: RunnableConfig) -> dict:
     messages = state["messages"] + [response]
     tool_calls = response.tool_calls if response.tool_calls else []
     
+    doc_id = state.get("turn_doc_id")
+    timestamp = state.get("turn_timestamp")
+    thread_id = get_agent_request_value(config, "thread_id", "")
+    if doc_id and timestamp:
+        question = get_last_user_message_content(state)
+        chat_turn = ChatTurn(
+            question=question,
+            answer=response.content if response.content else "",
+            timestamp=timestamp,
+            user_id=user_id,
+            thread_id=thread_id,
+        )
+        document = Document(
+            page_content=json.dumps(chat_turn.model_dump()),
+            metadata={"user_id": user_id, "thread_id": thread_id, "timestamp": timestamp},
+        )
+        get_vector_db_client().update_document(doc_id, document)
+
     return {"messages": messages, "tool_calls": tool_calls}
 
 

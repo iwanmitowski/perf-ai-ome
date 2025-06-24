@@ -15,6 +15,9 @@ class AgentState(MessagesState, total=False):
     tool_calls: list[ToolCall]
     assets: list[dict]
     retrieved_docs: str
+    user_preferences: dict | None
+    turn_doc_id: str | None
+    turn_timestamp: str | None
 
 class ToolAsset(BaseModel):
     id: str

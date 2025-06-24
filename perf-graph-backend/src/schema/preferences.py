@@ -10,3 +10,10 @@ class ScentProfile(BaseModel):
     sillage: Optional[str] = Field(default=None, description="Sillage preference")
     longevity: Optional[str] = Field(default=None, description="Longevity preference")
     additional: Optional[str] = Field(default=None, description="Additional notes from the user")
+
+
+class UserPreferences(BaseModel):
+    """MongoDB document structure for storing user scent preferences."""
+
+    id: str = Field(alias="_id", description="Unique user identifier")
+    preferences: ScentProfile = Field(description="The user's fragrance preferences")
