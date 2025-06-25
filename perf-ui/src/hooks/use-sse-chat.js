@@ -21,6 +21,7 @@ export function useSSEChat() {
   };
 
   const sendMessage = async (text) => {
+    const isNewChat = messages.length === 0;
     const userMessage = { role: "human", content: text };
     setMessages((prev) => [...prev, userMessage]);
 
@@ -29,17 +30,19 @@ export function useSSEChat() {
       id = newThread();
     }
 
-    fetch("http://localhost:8088/threads", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        thread_id: id,
-        user_id: "user-666",
-        summary: text.slice(0, 50),
-      }),
-    })
-      .then(() => loadThreads())
-      .catch((e) => console.error(e));
+    if (isNewChat) {
+      await fetch("http://localhost:8088/threads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          thread_id: id,
+          user_id: "user-666",
+          summary: text.slice(0, 50),
+        }),
+      })
+        .then(() => loadThreads())
+        .catch((e) => console.error(e));
+    }
 
     abortRef.current = new AbortController();
     setIsLoading(true);
@@ -133,6 +136,7 @@ export function useSSEChat() {
   };
 
   const loadHistory = async (threadId) => {
+    console.log("Loading history for thread:", threadId);
     setMessages([]);
     try {
       const res = await fetch("http://localhost:8088/history", {
@@ -142,10 +146,14 @@ export function useSSEChat() {
       });
       if (!res.ok) return;
       const data = await res.json();
-      const msgs = (data.messages ?? []).map((m) => ({
-        ...m,
-        role: m.role ?? m.type,
-      }));
+      const msgs = (data.messages ?? [])
+        .filter(
+          (m) => (m.type === "human" || m.type === "assistant") && !!m.content
+        )
+        .map((m) => ({
+          ...m,
+          role: m.role ?? m.type,
+        }));
       setMessages(msgs);
     } catch (e) {
       console.error(e);
@@ -155,12 +163,11 @@ export function useSSEChat() {
   const newThread = () => {
     const id = crypto.randomUUID();
     setThreadId(id);
-    setMessages([]);
     return id;
   };
 
   useEffect(() => {
-    loadHistory(threadId);
+    setMessages([]);
   }, [threadId]);
 
   return {
@@ -170,6 +177,8 @@ export function useSSEChat() {
     handleSubmit,
     append,
     isLoading,
+    loadHistory,
+    newThread,
     stop,
   };
 }

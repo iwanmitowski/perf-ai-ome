@@ -29,6 +29,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import { useEffect } from "react";
+import { useSSEChat } from "@/hooks/use-sse-chat";
 
 const items = [
   {
@@ -63,6 +64,7 @@ export function AppSidebar() {
   const { logout, isAuthenticated, loginWithRedirect } = useAuth0();
 
   const { threads, setThreadId, loadThreads } = useThreads();
+  const { loadHistory, newThread } = useSSEChat();
 
   useEffect(() => {
     loadThreads();
@@ -71,12 +73,11 @@ export function AppSidebar() {
 
   const selectChat = (threadId) => {
     setThreadId(threadId);
+    loadHistory(threadId);
   };
 
   const newChat = () => {
-    const id = crypto.randomUUID();
-    setThreadId(id);
-    loadThreads();
+    newThread();
   };
 
   return (
@@ -106,19 +107,24 @@ export function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuSubItem>
                 <SidebarMenuButton asChild>
-                  <a href="#" onClick={newChat}>
+                  <span className="cursor-pointer" onClick={() => newChat()}>
                     <Plus />
                     <span>New Chat</span>
-                  </a>
+                  </span>
                 </SidebarMenuButton>
               </SidebarMenuSubItem>
               {threads.map((item) => (
                 <SidebarMenuSubItem key={item.thread_id}>
                   <SidebarMenuButton asChild>
-                    <a href="#" onClick={() => selectChat(item.thread_id)}>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => {
+                        selectChat(item.thread_id);
+                      }}
+                    >
                       <MessageCircle />
                       <span>{item.summary}</span>
-                    </a>
+                    </span>
                   </SidebarMenuButton>
                 </SidebarMenuSubItem>
               ))}
@@ -149,12 +155,19 @@ export function AppSidebar() {
                       </a>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                      <span onClick={logout}>Sign out</span>
+                      <span className="cursor-pointer" onClick={logout}>
+                        Sign out
+                      </span>
                     </DropdownMenuItem>
                   </>
                 ) : (
                   <DropdownMenuItem>
-                    <span onClick={loginWithRedirect}>Login</span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={loginWithRedirect}
+                    >
+                      Login
+                    </span>
                   </DropdownMenuItem>
                 )}
               </DropdownMenuContent>
