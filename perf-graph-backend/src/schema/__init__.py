@@ -11,6 +11,7 @@ from schema.agent import (
 from schema.preferences import ScentProfile, UserPreferences
 from schema.thread import ChatThreadInput, ChatThread
 from schema.chat import ChatTurn
+from schema.feed import FeedItem, FeedResponse
 
 __all__ = [
     "AgentInfo",
@@ -26,4 +27,6 @@ __all__ = [
     "ChatTurn",
     "ChatThreadInput",
     "ChatThread",
+    "FeedItem",
+    "FeedResponse",
 ]
