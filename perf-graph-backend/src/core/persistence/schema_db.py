@@ -3,6 +3,7 @@ import logging
 from pymongo import MongoClient
 from abc import ABC, abstractmethod
 from langchain_core.documents import Document
+from pymongo.collation import Collation
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +43,18 @@ class MongoDBClient(BaseDBClient):
             cls._instance._client = MongoClient(os.getenv("MONGO_CONNECTIONSTRING", "mongodb://localhost:27017"))
             cls._instance._db = cls._instance._client["Agent"]
         return cls._instance
+
+    def _ensure_indexes(self):
+        self._db["chat_threads"].create_index(
+            [("summary", 1)],
+            name="ci_summary",
+            collation=Collation(locale="en", strength=2),
+        )
+
+        self._db["chat_threads"].create_index(
+            [("user_id", 1), ("createTime", -1)],
+            name="user_created"
+        )
 
     def get_collection(self, name: str):
         """Get a specific MongoDB collection by name."""

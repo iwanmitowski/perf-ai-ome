@@ -1,8 +1,8 @@
 import logging
-from typing import List
 from datetime import datetime
-from bson import ObjectId
 
+from pymongo import DESCENDING
+from pymongo.collation import Collation
 from fastapi import APIRouter, Query
 from core.persistence.db_factory import get_schema_db_client
 from schema import ChatThreadInput, ChatThread
@@ -21,7 +21,6 @@ def create_thread(thread: ChatThreadInput) -> ChatThread:
     """
     collection = get_schema_db_client().get_collection("chat_threads")
 
-    # 1) Generate a 6-word summary via LLM (fallback to raw summary if that fails)
     try:
         llm = get_model(OpenAIModelName.GPT_4O_MINI, temperature=0.0)
         messages = [
@@ -33,21 +32,18 @@ def create_thread(thread: ChatThreadInput) -> ChatThread:
         logger.exception("LLM summary generation failed; using raw summary")
         summary = thread.summary[:50]
 
-    # 2) Build the document: new _id, user_id, summary, createTime
     now = datetime.utcnow()
     doc = {
         "_id": thread.thread_id,
         "user_id": thread.user_id,
         "summary": summary,
         "createTime": now,
-        # include any other fields from your input, e.g.:
+
         **{k: v for k, v in thread.model_dump().items() if k not in ("thread_id", "user_id", "summary")},
     }
 
-    # 3) Insert
     collection.insert_one(doc)
 
-    # 4) Return
     return ChatThread(
         thread_id=thread.thread_id,
         user_id=doc["user_id"],
@@ -55,18 +51,48 @@ def create_thread(thread: ChatThreadInput) -> ChatThread:
         createTime=doc["createTime"],
     )
 
-@router.get("", response_model=List[ChatThread], summary="List chat threads")
-def list_threads(user_id: str = Query(None)) -> List[ChatThread]:
-    collection = get_schema_db_client().get_collection("chat_threads")
-    query = {"user_id": user_id} if user_id else {}
-    cursor = collection.find(query).sort("createTime", -1)
+ENGLISH_CI_COLLATION = Collation(locale="en", strength=2)
 
-    return [
+@router.get("", summary="List chat threads")
+def list_threads(
+    user_id: str = Query(None),
+    page: int = Query(1, ge=1),
+    limit: int = Query(20, ge=1, le=100),
+    q: str = Query("", alias="q"),
+) -> dict:
+    """List threads with optional pagination and case-insensitive substring search."""
+    collection = get_schema_db_client().get_collection("chat_threads")
+    
+    query: dict = {}
+    if user_id:
+        query["user_id"] = user_id
+
+    if q:
+        query["summary"] = {"$regex": q, "$options": "i"}
+
+    skip = (page - 1) * limit
+
+    cursor = (
+        collection
+          .find(query)
+          .collation(ENGLISH_CI_COLLATION)
+          .sort("createTime", DESCENDING)
+          .skip(skip)
+          .limit(limit + 1)
+    )
+
+    docs = list(cursor)
+    has_more = len(docs) > limit
+    docs = docs[:limit]
+
+    threads = [
         ChatThread(
             thread_id=str(d["_id"]),
             user_id=d["user_id"],
             summary=d.get("summary", ""),
             createTime=d.get("createTime"),
         )
-        for d in cursor
+        for d in docs
     ]
+
+    return {"threads": threads, "hasMore": has_more}

@@ -182,5 +182,6 @@ export function useSSEChat() {
     loadHistory,
     newThread,
     stop,
+    setMessages,
   };
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 
 import ScentProfileQuiz from "@/components/preferences/ScentProfileQuiz";
 import { Button } from "@/components/ui/button";
@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-import { Wand2, Dna, FlaskConical, Heart, HeartOff } from "lucide-react";
+import { Wand2, Dna, FlaskConical, Heart, HeartOff, Link } from "lucide-react";
 import { toast } from "sonner";
 
 const sillageLabels = {
@@ -59,6 +59,8 @@ function Preferences() {
   useEffect(() => {
     setQuizAnswers(profile);
   }, [profile]);
+
+  const navigate = useNavigate();
 
   const handleLog = async (field) => {
     if (!logValue) return;
@@ -150,7 +152,16 @@ function Preferences() {
             </p>
           </CardContent>
           <CardFooter>
-            <Button>Find My Perfect Scent</Button>
+            <Button
+              className="cursor-pointer"
+              onClick={() =>
+                navigate({
+                  to: "/",
+                })
+              }
+            >
+              Explore The World Of Scents
+            </Button>
           </CardFooter>
         </Card>
 
