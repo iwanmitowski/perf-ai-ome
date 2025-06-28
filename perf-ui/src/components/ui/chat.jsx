@@ -171,7 +171,7 @@ export function Chat({
         </ChatMessages>
       ) : null}
       <ChatForm
-        className="mt-auto"
+        className="mt-6"
         isPending={isGenerating || isTyping}
         handleSubmit={handleSubmit}
       >
