@@ -29,7 +29,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import { useEffect } from "react";
-import { useSSEChat } from "@/hooks/use-sse-chat";
+import { useChat } from "@/hooks/useChat";
 
 const items = [
   {
@@ -64,7 +64,7 @@ export function AppSidebar() {
   const { logout, isAuthenticated, loginWithRedirect } = useAuth0();
 
   const { threads, setThreadId, loadThreads } = useThreads();
-  const { loadHistory, newThread } = useSSEChat();
+  const { loadHistory, newThread, setMessages } = useChat();
 
   useEffect(() => {
     loadThreads();
@@ -78,6 +78,7 @@ export function AppSidebar() {
 
   const newChat = () => {
     newThread();
+    setMessages([]);
   };
 
   return (

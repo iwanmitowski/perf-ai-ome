@@ -1,6 +1,7 @@
 import { Chat } from "@/components/ui/chat";
+import { useChat } from "@/hooks/useChat";
 
-import { useSSEChat } from "@/hooks/use-sse-chat";
+import { useEffect } from "react";
 
 export function ChatWithSuggestions() {
   const {
@@ -11,7 +12,11 @@ export function ChatWithSuggestions() {
     append,
     isLoading,
     stop,
-  } = useSSEChat();
+  } = useChat();
+
+  useEffect(() => {
+    console.log("ChatWithSuggestions messages:", messages);
+  }, [messages]);
 
   return (
     <Chat

@@ -1,5 +1,8 @@
 import SidebarLayout from "@/components/shared/SidebarLayout";
-import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { ChatProvider } from "@/hooks/chat-context";
+import { ThreadProvider } from "@/hooks/thread-context";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 export const Route = createRootRoute({

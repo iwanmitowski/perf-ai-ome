@@ -10,7 +10,6 @@ from langchain_core.messages import AIMessage, SystemMessage, HumanMessage, Base
 from langchain_core.runnables import RunnableConfig, RunnableLambda, RunnableSerializable
 from langchain_core.tools import StructuredTool
 
-from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import StateGraph, END
 
 # Assuming these are correctly imported from your project structure
@@ -331,6 +330,6 @@ def build_agent_graph():
     
     agent.add_conditional_edges("model", pending_tool_calls, {"tools": "tools", "done": END})
 
-    return agent.compile(checkpointer=MemorySaver())
+    return agent.compile()
 
 agentic_rag = build_agent_graph()

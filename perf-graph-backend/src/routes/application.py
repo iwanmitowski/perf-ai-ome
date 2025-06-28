@@ -9,6 +9,8 @@ from routes.api_agent import router as agent_router
 from routes.api_org import router as org_router
 from routes.api_service import router as service_router
 from routes.api_thread import router as thread_router
+from memory import initialize_database
+from agents import get_agent, get_all_agent_info
 
 warnings.filterwarnings("ignore", category=LangChainBetaWarning)
 logger = logging.getLogger(__name__)
@@ -17,13 +19,26 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app_ctx: FastAPI):
     """Handles startup and shutdown operations."""
-    try:
-        init_db_clients()
-        yield
-    except Exception as e:
-        logger.error(f"Startup failure: {e}", exc_info=True)
-        raise
+    # Initialize the database context manager
+    db_manager = initialize_database()
+    init_db_clients()
 
+    # Enter the context, which will be held open for the app's life
+    async with db_manager as db:
+        try:
+            # Configure agents with the checkpointer
+            agents = get_all_agent_info()
+            for a in agents:
+                agent = get_agent(a.key)
+                agent.checkpointer = db
+            
+            logger.info("Startup complete. Agents configured.")
+            
+            # Yield control to the running application
+            yield
+            
+        except Exception as e:
+            logger.error(f"Application error: {e}", exc_info=True)
 
 openapi_tags_metadata = [
     {

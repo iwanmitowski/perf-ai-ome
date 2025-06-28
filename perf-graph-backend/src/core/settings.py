@@ -39,7 +39,7 @@ class Settings(BaseSettings):
     HOST: str = "0.0.0.0"
     PORT: int = 8088
 
-    DEFAULT_AGENT: str = "agentic-rag-alfa" #TODO smeni
+    DEFAULT_AGENT: str = "agentic-rag-alfa"
 
     OPENAI_API_KEY: SecretStr | None = None
     USE_AWS_BEDROCK: bool = False

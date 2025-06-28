@@ -20,6 +20,10 @@ export function useSSEChat() {
     setIsLoading(false);
   };
 
+  useEffect(() => {
+    console.log("🟢 messages now:", messages);
+  }, [messages]);
+
   const sendMessage = async (text) => {
     const isNewChat = messages.length === 0;
     const userMessage = { role: "human", content: text };
@@ -154,6 +158,7 @@ export function useSSEChat() {
           ...m,
           role: m.role ?? m.type,
         }));
+      console.log("Loaded messages:", msgs);
       setMessages(msgs);
     } catch (e) {
       console.error(e);
@@ -162,13 +167,10 @@ export function useSSEChat() {
 
   const newThread = () => {
     const id = crypto.randomUUID();
+    console.log("Creating new thread with ID:", id);
     setThreadId(id);
     return id;
   };
-
-  useEffect(() => {
-    setMessages([]);
-  }, [threadId]);
 
   return {
     messages,

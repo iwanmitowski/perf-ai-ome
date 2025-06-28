@@ -35,9 +35,8 @@ def create_thread(thread: ChatThreadInput) -> ChatThread:
 
     # 2) Build the document: new _id, user_id, summary, createTime
     now = datetime.utcnow()
-    new_id = str(ObjectId())
     doc = {
-        "_id": new_id,
+        "_id": thread.thread_id,
         "user_id": thread.user_id,
         "summary": summary,
         "createTime": now,
@@ -50,7 +49,7 @@ def create_thread(thread: ChatThreadInput) -> ChatThread:
 
     # 4) Return
     return ChatThread(
-        thread_id=new_id,
+        thread_id=thread.thread_id,
         user_id=doc["user_id"],
         summary=doc["summary"],
         createTime=doc["createTime"],

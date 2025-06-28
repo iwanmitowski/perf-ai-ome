@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { ArrowDown, ThumbsDown, ThumbsUp } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -25,7 +25,7 @@ export function Chat({
 }) {
   const lastMessage = messages.at(-1);
   const isEmpty = messages.length === 0;
-  const isTyping = lastMessage?.role === "user";
+  const isTyping = lastMessage?.type === "human";
 
   const messagesRef = useRef(messages);
   messagesRef.current = messages;
