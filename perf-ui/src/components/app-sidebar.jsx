@@ -259,7 +259,7 @@ export function AppSidebar() {
                       className="cursor-pointer"
                       onClick={loginWithRedirect}
                     >
-                      Login
+                      Sign in
                     </span>
                   </DropdownMenuItem>
                 )}

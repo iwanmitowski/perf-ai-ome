@@ -11,6 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as PerfAiOmeImport } from './routes/perf-ai-ome'
 import { Route as ProtectedImport } from './routes/_protected'
 import { Route as IndexImport } from './routes/index'
 import { Route as FeedIndexImport } from './routes/feed/index'
@@ -18,6 +19,12 @@ import { Route as FeedIdImport } from './routes/feed/$id'
 import { Route as ProtectedPreferencesImport } from './routes/_protected/preferences'
 
 // Create/Update Routes
+
+const PerfAiOmeRoute = PerfAiOmeImport.update({
+  id: '/perf-ai-ome',
+  path: '/perf-ai-ome',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const ProtectedRoute = ProtectedImport.update({
   id: '/_protected',
@@ -66,6 +73,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProtectedImport
       parentRoute: typeof rootRoute
     }
+    '/perf-ai-ome': {
+      id: '/perf-ai-ome'
+      path: '/perf-ai-ome'
+      fullPath: '/perf-ai-ome'
+      preLoaderRoute: typeof PerfAiOmeImport
+      parentRoute: typeof rootRoute
+    }
     '/_protected/preferences': {
       id: '/_protected/preferences'
       path: '/preferences'
@@ -107,6 +121,7 @@ const ProtectedRouteWithChildren = ProtectedRoute._addFileChildren(
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '': typeof ProtectedRouteWithChildren
+  '/perf-ai-ome': typeof PerfAiOmeRoute
   '/preferences': typeof ProtectedPreferencesRoute
   '/feed/$id': typeof FeedIdRoute
   '/feed': typeof FeedIndexRoute
@@ -115,6 +130,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '': typeof ProtectedRouteWithChildren
+  '/perf-ai-ome': typeof PerfAiOmeRoute
   '/preferences': typeof ProtectedPreferencesRoute
   '/feed/$id': typeof FeedIdRoute
   '/feed': typeof FeedIndexRoute
@@ -124,6 +140,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/_protected': typeof ProtectedRouteWithChildren
+  '/perf-ai-ome': typeof PerfAiOmeRoute
   '/_protected/preferences': typeof ProtectedPreferencesRoute
   '/feed/$id': typeof FeedIdRoute
   '/feed/': typeof FeedIndexRoute
@@ -131,13 +148,14 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '' | '/preferences' | '/feed/$id' | '/feed'
+  fullPaths: '/' | '' | '/perf-ai-ome' | '/preferences' | '/feed/$id' | '/feed'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '' | '/preferences' | '/feed/$id' | '/feed'
+  to: '/' | '' | '/perf-ai-ome' | '/preferences' | '/feed/$id' | '/feed'
   id:
     | '__root__'
     | '/'
     | '/_protected'
+    | '/perf-ai-ome'
     | '/_protected/preferences'
     | '/feed/$id'
     | '/feed/'
@@ -147,6 +165,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ProtectedRoute: typeof ProtectedRouteWithChildren
+  PerfAiOmeRoute: typeof PerfAiOmeRoute
   FeedIdRoute: typeof FeedIdRoute
   FeedIndexRoute: typeof FeedIndexRoute
 }
@@ -154,6 +173,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ProtectedRoute: ProtectedRouteWithChildren,
+  PerfAiOmeRoute: PerfAiOmeRoute,
   FeedIdRoute: FeedIdRoute,
   FeedIndexRoute: FeedIndexRoute,
 }
@@ -170,6 +190,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/_protected",
+        "/perf-ai-ome",
         "/feed/$id",
         "/feed/"
       ]
@@ -182,6 +203,9 @@ export const routeTree = rootRoute
       "children": [
         "/_protected/preferences"
       ]
+    },
+    "/perf-ai-ome": {
+      "filePath": "perf-ai-ome.jsx"
     },
     "/_protected/preferences": {
       "filePath": "_protected/preferences.jsx",
