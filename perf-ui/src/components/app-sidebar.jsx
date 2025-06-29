@@ -10,7 +10,6 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarMenuSubItem,
-  SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useThreads } from "@/hooks/thread-context";
@@ -28,7 +27,6 @@ import { useDebounce } from "@/hooks/useDebounce";
 import {
   MessageCircle,
   Smile,
-  MessagesSquare,
   Flame,
   Plus,
   ChevronUp,
@@ -44,11 +42,6 @@ const items = [
     title: "Home", // How are you feeling, what is your mood today? etc
     url: "/",
     icon: Smile,
-  },
-  {
-    title: "Search chats",
-    url: "#",
-    icon: MessagesSquare,
   },
   {
     title: "Scent Feed", // daily news, recommendations

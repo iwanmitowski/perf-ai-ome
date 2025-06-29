@@ -8,6 +8,7 @@ export function useSSEChat() {
   const [isLoading, setIsLoading] = useState(false);
   const abortRef = useRef(null);
   const { user } = useAuth0();
+  const userId = user?.sub;
   const { threadId, setThreadId, loadThreads } = useThreads();
   console.log("user", user);
 
@@ -40,7 +41,7 @@ export function useSSEChat() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           thread_id: id,
-          user_id: "user-666",
+          user_id: userId,
           summary: text.slice(0, 50),
         }),
       })
@@ -65,7 +66,7 @@ export function useSSEChat() {
           model: "gpt-4o",
           thread_id: id,
           stream_tokens: true,
-          user_id: "user-666",
+          user_id: userId,
         }),
         signal: abortRef.current.signal,
       });

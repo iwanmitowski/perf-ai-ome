@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-
+import { useAuth0 } from "@auth0/auth0-react";
 import ScentProfileQuiz from "@/components/preferences/ScentProfileQuiz";
 import { Button } from "@/components/ui/button";
 import {
@@ -37,28 +37,29 @@ const longevityLabels = {
 };
 
 export const Route = createFileRoute("/_protected/preferences")({
-  loader: async () => {
-    try {
-      const res = await axios.get(
-        "http://localhost:8088/user/user-666/scent-profile"
-      );
-      return res.data.profile;
-    } catch {
-      return null;
-    }
-  },
   component: Preferences,
 });
 
 function Preferences() {
-  const profile = Route.useLoaderData();
-  const [quizAnswers, setQuizAnswers] = useState(profile);
+  const { user } = useAuth0();
+  const [quizAnswers, setQuizAnswers] = useState(null);
   const [isQuizOpen, setIsQuizOpen] = useState(false);
   const [logValue, setLogValue] = useState("");
 
   useEffect(() => {
-    setQuizAnswers(profile);
-  }, [profile]);
+    const fetchProfile = async () => {
+      if (!user) return;
+      try {
+        const res = await axios.get(
+          `http://localhost:8088/user/${user.sub}/scent-profile`
+        );
+        setQuizAnswers(res.data.profile);
+      } catch {
+        setQuizAnswers(null);
+      }
+    };
+    fetchProfile();
+  }, [user]);
 
   const navigate = useNavigate();
 
@@ -72,7 +73,7 @@ function Preferences() {
     };
     try {
       await axios.post(
-        "http://localhost:8088/user/user-666/scent-profile",
+        `http://localhost:8088/user/${user?.sub}/scent-profile`,
         updated
       );
       toast.success("Saved", { description: `Logged as ${field}` });

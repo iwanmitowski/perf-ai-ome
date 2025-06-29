@@ -1,4 +1,5 @@
 import { useReducer, useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -109,6 +110,7 @@ const TOTAL_STEPS = 6;
 
 export default function ScentProfileQuiz({ initialAnswers = {}, onComplete }) {
   const [state, dispatch] = useReducer(quizReducer, initialState);
+  const { user } = useAuth0();
 
   useEffect(() => {
     dispatch({ type: "INITIALIZE", payload: initialAnswers });
@@ -120,7 +122,7 @@ export default function ScentProfileQuiz({ initialAnswers = {}, onComplete }) {
     const { step, isSubmitting, ...payload } = state;
     try {
       await axios.post(
-        "http://localhost:8088/user/user-666/scent-profile",
+        `http://localhost:8088/user/${user?.sub}/scent-profile`,
         payload
       );
       toast.success("Profile Saved!", {

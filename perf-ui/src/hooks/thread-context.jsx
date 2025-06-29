@@ -1,14 +1,15 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const ThreadContext = React.createContext(null);
 
-async function apiFetchThreads({ page = 1, searchQuery = "" }) {
+async function apiFetchThreads({ page = 1, searchQuery = "", userId }) {
   const limit = 2;
   const params = new URLSearchParams({
     page: page,
     limit: String(limit),
     q: searchQuery,
-    user_id: "user-666",
+    user_id: userId,
   });
   const res = await fetch(`http://localhost:8088/threads?${params}`);
   if (!res.ok) {
@@ -18,6 +19,8 @@ async function apiFetchThreads({ page = 1, searchQuery = "" }) {
 }
 
 export function ThreadProvider({ children }) {
+  const { user } = useAuth0();
+  const userId = user?.sub;
   const [threadId, setThreadIdState] = React.useState(
     () => localStorage.getItem("threadId") ?? ""
   );
@@ -39,7 +42,7 @@ export function ThreadProvider({ children }) {
 
   const loadThreads = React.useCallback(
     async ({ isNewSearch = false, searchQuery = currentQuery } = {}) => {
-      if (loading || (!isNewSearch && !hasMore)) {
+      if (!userId || loading || (!isNewSearch && !hasMore)) {
         return;
       }
 
@@ -57,6 +60,7 @@ export function ThreadProvider({ children }) {
         const data = await apiFetchThreads({
           page: pageToFetch,
           searchQuery,
+          userId,
         });
 
         setThreads((prevThreads) =>
@@ -70,7 +74,7 @@ export function ThreadProvider({ children }) {
         setLoading(false);
       }
     },
-    [loading, hasMore, page, currentQuery]
+    [loading, hasMore, page, currentQuery, userId]
   );
 
   React.useEffect(() => {
