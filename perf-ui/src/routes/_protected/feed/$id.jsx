@@ -2,7 +2,7 @@ import FeedDetailPage from "@/components/feed/FeedDetailPage";
 import { createFileRoute } from "@tanstack/react-router";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export const Route = createFileRoute("/feed/$id")({
+export const Route = createFileRoute("/_protected/feed/$id")({
   loader: async ({ params }) => {
     const res = await fetch(`http://localhost:8088/feed/${params.id}`);
     if (!res.ok) {

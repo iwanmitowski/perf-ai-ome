@@ -1,5 +1,5 @@
 import React from "react";
-import { Route as FeedDetailRoute } from "@/routes/feed/$id";
+import { Route as FeedDetailRoute } from "@/routes/_protected/feed/$id";
 import ReactMarkdown from "react-markdown";
 
 export default function FeedDetailPage() {
