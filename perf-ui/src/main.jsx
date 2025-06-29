@@ -5,6 +5,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import { RouterWithAuthContext } from "./components/shared/RouterWIthAuthContext";
 import { SidebarProvider } from "./components/ui/sidebar";
 import { ThreadProvider } from "./hooks/thread-context";
+import { FeedProvider } from "./hooks/feed-context";
 import { ChatProvider } from "./hooks/chat-context";
 
 const rootElement = document.getElementById("root");
@@ -21,9 +22,11 @@ if (!rootElement.innerHTML) {
       >
         <SidebarProvider>
           <ThreadProvider>
-            <ChatProvider>
-              <RouterWithAuthContext />
-            </ChatProvider>
+            <FeedProvider>
+              <ChatProvider>
+                <RouterWithAuthContext />
+              </ChatProvider>
+            </FeedProvider>
           </ThreadProvider>
         </SidebarProvider>
       </Auth0Provider>

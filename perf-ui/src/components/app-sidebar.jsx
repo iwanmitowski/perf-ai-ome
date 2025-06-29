@@ -37,6 +37,7 @@ import {
 import { useEffect, useState, useRef, useCallback } from "react";
 import { useChat } from "@/hooks/useChat";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { useNavigate } from "@tanstack/react-router";
 
 const items = [
   {
@@ -96,6 +97,8 @@ export function AppSidebar() {
     loadThreads({ isNewSearch: true, searchQuery: debouncedSearchQuery });
   }, [debouncedSearchQuery]);
 
+  const navigate = useNavigate();
+
   const selectChat = (threadId) => {
     setThreadId(threadId);
     loadHistory(threadId);
@@ -104,6 +107,9 @@ export function AppSidebar() {
   const newChat = () => {
     newThread();
     setMessages([]);
+    navigate({
+      to: "/",
+    });
   };
 
   console.log("Current loading state:", loading);

@@ -40,5 +40,5 @@ pymongo~=4.11.2
 typing_extensions~=4.12.2
 cachetools~=5.5.2
 pypdf~=5.4.0
-openai~=1.16.0
+openai~=1.58.1
 langgraph.checkpoint.mongodb
