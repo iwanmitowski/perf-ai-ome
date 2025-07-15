@@ -32,7 +32,6 @@ async def _choose_topics(n: int) -> List[str]:
     ]
     parser = StructuredOutputParser.from_response_schemas(response_schemas)
     fmt_instructions = parser.get_format_instructions()
-    logger.info("Choosing topics")
     llm = get_model(OpenAIModelName.GPT_4O_MINI, temperature=0.7)
 
     messages = [

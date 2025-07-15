@@ -1,4 +1,4 @@
-import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
+import { forwardRef, useCallback, useRef, useState } from "react";
 import { ArrowDown, ThumbsDown, ThumbsUp } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -179,7 +179,7 @@ export function Chat({
           <MessageInput
             value={input}
             onChange={handleInputChange}
-            allowAttachments
+            allowAttachments={false}
             files={files}
             setFiles={setFiles}
             stop={handleStop}

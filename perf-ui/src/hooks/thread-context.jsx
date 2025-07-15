@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const ThreadContext = React.createContext(null);
 
 async function apiFetchThreads({ page = 1, searchQuery = "", userId }) {
-  const limit = 2;
+  const limit = 4;
   const params = new URLSearchParams({
     page: page,
     limit: String(limit),
